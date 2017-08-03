@@ -98,8 +98,8 @@ class Login
     //Vetifica usuário e senha no banco de dados!
     private function checkUserInfo()
     {
-        $user = new TableCrud(defined(PRE) ? PRE : "" . $this->table);
-        $user->load(array("email" => $this->email, "password" => $this->encryptMiddleEnd($this->senha)));
+        $user = new TableCrud(defined('PRE) ? PRE' : "" . $this->table);
+        $user->loadArray(array("email" => $this->email, "password" => $this->encryptMiddleEnd($this->senha)));
         if($user->exist()) {
             $this->sessionStartLogin($user->getDados());
         } else {
