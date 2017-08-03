@@ -1,0 +1,24 @@
+{
+  "name": "conn/session-control",
+  "description": "Controle de Sessão para login de usuários",
+  "type": "library",
+  "license": "MIT",
+  "minimum-stability": "dev",
+  "authors": [
+    {
+      "name": "Edinei J. Bauer",
+      "email": "edineibauer@gmail.com"
+    }
+  ],
+  "require": {
+    "php": "^7.0",
+    "conn/conn-crud": "^1.1"
+  },
+  "autoload": {
+    "psr-0": {
+      "SessionControl": "src/"
+    }
+  }
+}
+
+
