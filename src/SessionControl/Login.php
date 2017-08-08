@@ -9,6 +9,7 @@
 
 namespace SessionControl;
 
+use ConnCrud\InfoTable;
 use \ConnCrud\TableCrud;
 
 class Login
@@ -18,21 +19,11 @@ class Login
     private $senha;
     private $error;
     private $result;
-    private $table = "user";
+    private $table;
 
-    /**
-     * <b>Informar Level:</b> Informe o nível de acesso mínimo para a área a ser protegida.
-     * @param INT $Level = Nível mínimo para acesso
-     */
-    function __construct()
+    public function __construct()
     {
-        //        $this->Level = (int) $Level;
-        //        $this->Pre = (string) $pre;
-        //        if (isset($user) && !empty($user)):
-        //            $this->Email = (string) ($user['email'] ? $user['email'] : '');
-        //            $this->Senha = (string) ($user['password'] ? $user['password'] : '');
-        //        endif;
-        //        $this->User_banco = $this->Pre . "user";
+        $this->table = $this->getPre() . "user";
     }
 
     /**
@@ -48,7 +39,7 @@ class Login
      */
     public function setSenha($senha, $middleEncrypt = null)
     {
-        $this->senha = (string) !$middleEncrypt ? $this->encryptMiddle(trim($senha)) : trim($senha);
+        $this->senha = (string)!$middleEncrypt ? $this->encryptMiddle(trim($senha)) : trim($senha);
     }
 
     /**
@@ -58,7 +49,7 @@ class Login
      */
     public function exeLogin(array $data = null)
     {
-        if ($data && isset($data['email']) && isset($data['password'])) {
+        if (isset($data['email']) && isset($data['password'])) {
             $this->setEmail($data['email']);
             $this->setSenha($data['password']);
         }
@@ -98,9 +89,14 @@ class Login
     //Vetifica usuário e senha no banco de dados!
     private function checkUserInfo()
     {
-        $user = new TableCrud(defined('PRE) ? PRE' : "" . $this->table);
+        if (!$this->checkTableExist($this->table)) {
+            $database = new LoginDataBase();
+            $database->createDataBase($this->table);
+        }
+
+        $user = new TableCrud($this->table);
         $user->loadArray(array("email" => $this->email, "password" => $this->encryptMiddleEnd($this->senha)));
-        if($user->exist()) {
+        if ($user->exist()) {
             $this->sessionStartLogin($user->getDados());
         } else {
             $this->error = 'usuário inválido! Por favor tente novamente';
@@ -159,4 +155,21 @@ class Login
         endif;
     }
 
+    private function checkTableExist($table)
+    {
+        $table = (defined('PRE') && !preg_match('/^' . PRE . '/i', $table) ? PRE . $table : $table);
+        $db = DATABASE;
+        $read = new InfoTable();
+        $read->exeRead("COLUMNS", "WHERE TABLE_SCHEMA = :nb && TABLE_NAME = :nt", "nb={$db}&nt={$table}");
+        if (!$read->getResult()):
+            return false;
+        endif;
+
+        return true;
+    }
+
+    private function getPre()
+    {
+        return (defined('PRE') ? PRE : '');
+    }
 }
