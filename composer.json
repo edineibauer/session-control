@@ -12,8 +12,8 @@
   ],
   "require": {
     "php": "^7.0",
-    "conn/conn-crud": "^1.1",
-    "conn/email-control": "^0.9"
+    "conn/conn-crud": "dev-master",
+    "conn/email-control": "dev-master"
   },
   "autoload": {
     "psr-0": {
