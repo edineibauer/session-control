@@ -13,7 +13,8 @@
   "require": {
     "php": "^7.0",
     "conn/conn-crud": "dev-master",
-    "conn/email-control": "dev-master"
+    "conn/email-control": "dev-master",
+    "google/recaptcha": "~1.1"
   },
   "autoload": {
     "psr-0": {
@@ -21,5 +22,3 @@
     }
   }
 }
-
-

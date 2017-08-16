@@ -4,21 +4,34 @@
  * User: nenab
  * Date: 02/08/2017
  * Time: 19:48
+ *
+ * @copyright (c) 2017, Edinei J. Bauer
  */
 
 namespace SessionControl;
 
-class LoginAcess
+use \ConnCrud\TableCrud;
+
+class LoginAcess extends StartSession
 {
-    private $result;
+    private $logged;
     private $mensagem;
 
-    /**
-     * @return mixed
-     */
-    public function getResult()
+
+    public function __construct()
     {
-        return $this->result;
+        $this->logged = false;
+        $this->mensagem = "Sem informações para conectar";
+        $this->checkLogin();
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function isLogged(): bool
+    {
+        return $this->logged;
     }
 
     /**
@@ -29,34 +42,16 @@ class LoginAcess
         return $this->mensagem;
     }
 
-    public function __construct()
-    {
-        $this->mensagem = "Sem informações para conectar";
-        $this->checkLogin();
-    }
-
     private function checkLogin()
     {
-        if ($this->isLogged()) {
+        if ($this->isLoggedIn()) {
             $this->checkSessionWrong();
-            $this->checkCookieWrong();
-            $this->checkStatusAccount();
         } else {
             $this->checkCookieInfo();
         }
     }
 
-    private function checkStatusAccount()
-    {
-        if (isset($_SESSION['userlogin']['status']) && $_SESSION['userlogin']['status'] < 1){
-            $this->mensagem = "Usuário desativado, não permitido o login";
-            $this->deslogar();
-        } else {
-            $this->result = true;
-        }
-    }
-
-    private function isLogged()
+    private function isLoggedIn()
     {
         return isset($_SESSION['userlogin']);
     }
@@ -69,18 +64,16 @@ class LoginAcess
         endif;
     }
 
-    private function checkCookieWrong()
-    {
-        if (isset($_SESSION['userlogin']['email']) && isset($_COOKIE['pmail']) && $_SESSION['userlogin']['email'] != base64_decode($_COOKIE['pmail'])):
-            $this->mensagem = "Cookies não conferem com Sessão atual, desconectar";
-            $this->unsetCookie();
-        endif;
-    }
-
     private function unsetCookie()
     {
-        setcookie("pmail", 0, time() - 1, "/");
-        setcookie("ppass", 0, time() - 1, "/");
+        if(isset($_SESSION['userlogin']['token'])) {
+            $token = TableCrud("user_token");
+            $token->load($_SESSION['userlogin']['token']);
+            $token->token = "";
+            $token->expire = "";
+            $token->save();
+        }
+        setcookie("token", 0, time() - 1, "/");
     }
 
     private function unsetSession()
@@ -90,33 +83,30 @@ class LoginAcess
 
     public function deslogar()
     {
-        $this->unsetSession();
         $this->unsetCookie();
+        $this->unsetSession();
     }
 
     private function checkCookieInfo()
     {
-        if (isset($_COOKIE['pmail']) && !isset($_SESSION['userlogin'])) {
-            $cookies['password'] = $this->descriptografar($_COOKIE['pmail']);
-            $cookies['email'] = $this->descriptografar($_COOKIE['ppass']);
+        if (isset($_COOKIE['token'])) {
 
-            $login = new Login();
-            $login->setEmail($cookies['email']);
-            $login->setSenha($cookies['password'], true);
-            $login->exeLogin();
-            if ($login->getResult()) {
-                $this->mensagem = "Login realizado com informações do Cookie!";
-                $this->checkStatusAccount();
+            $token = new TableCrud("user_token");
+            $token->load("token", $_COOKIE['token']);
+            if ($token->exist() && $token->status === 1 && $token->expire > date("Y-m-d H:i:s")) {
+
+                $this->sessionStartLogin($token->id);
+                $this->updateExpire($token->id);
+
             } else {
-                $this->mensagem = "Informações dos Cookies não conferem, cookies deletados";
+                $token->expire = date("Y-m-d H:i:s");
+                $token->token = "";
+                $token->save();
+
+                $this->mensagem = "Informações do Cookie não válidos";
                 $this->unsetCookie();
             }
         }
-    }
-
-    private function descriptografar($stringCriptografada)
-    {
-        return substr(base64_decode(substr(base64_decode($stringCriptografada), 0, -1)), 3, -3);
     }
 
 }

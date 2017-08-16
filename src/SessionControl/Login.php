@@ -4,27 +4,20 @@
  * Login.class [ MODEL ]
  * Responável por autenticar, validar, e checar usuário do sistema de login!
  *
- * @copyright (c) 2014, Edinei J. Bauer NENA PRO
+ * @copyright (c) 2017, Edinei J. Bauer
  */
 
 namespace SessionControl;
 
-use ConnCrud\InfoTable;
 use \ConnCrud\TableCrud;
+use Helpers\Check;
+use Helpers\Helper;
 
-class Login
+class Login extends StartSession
 {
-
     private $email;
     private $senha;
-    private $error;
-    private $result;
-    private $table;
-
-    public function __construct()
-    {
-        $this->table = $this->getPre() . "user";
-    }
+    private $erro;
 
     /**
      * @param string $email
@@ -37,15 +30,15 @@ class Login
     /**
      * @param string $senha
      */
-    public function setSenha($senha, $middleEncrypt = null)
+    public function setSenha($senha)
     {
-        $this->senha = (string)!$middleEncrypt ? $this->encryptMiddle(trim($senha)) : trim($senha);
+        $this->senha = (string)$this->encrypt(trim($senha));
     }
 
     /**
      * <b>Efetuar Login:</b> Envelope um array atribuitivo com índices STRING user [email], STRING pass.
      * Ao passar este array na ExeLogin() os dados são verificados e o login é feito!
-     * @param ARRAY $data = user [email], pass
+     * @param $data = user [email], pass
      */
     public function exeLogin(array $data = null)
     {
@@ -56,120 +49,60 @@ class Login
         $this->setLogin();
     }
 
-    /**
-     * <b>Verificar Login:</b> Executando um getResult é possível verificar se foi ou não efetuado
-     * o acesso com os dados.
-     * @return BOOL $Var = true para login e false para erro
-     */
-    public function getResult()
-    {
-        return $this->result;
-    }
-
-    /**
-     * <b>Obter Erro:</b> Retorna um array associativo com uma mensagem e um tipo de erro WS_.
-     * @return ARRAY $Error = Array associatico com o erro
-     */
-    public function getError()
-    {
-        return $this->error;
-    }
-
     private function setLogin()
     {
         if (!$this->email || !$this->senha) {
-            $this->error = 'Email e Senha são necessários para efetuar o login!';
-        } elseif (!$this->checkEmail($this->email)) {
-            $this->error = 'Formato de Email inválido!';
+            $this->setError('Email e Senha são necessários para efetuar o login!');
+        } elseif (!Check::email($this->email)) {
+            $this->setError('Formato de Email inválido!');
+        } else {
+            $this->checkUserInfo();
         }
-
-        $this->checkUserInfo();
     }
 
     //Vetifica usuário e senha no banco de dados!
     private function checkUserInfo()
     {
-        if (!$this->checkTableExist($this->table)) {
-            $database = new LoginDataBase();
-            $database->createDataBase($this->table);
+        if ($this->isHuman()) {
+            $token = new TableCrud($this->getTable());
+            $token->loadArray(array("email" => $this->email, "password" => $this->senha));
+            if ($token->exist()) {
+                if ($token->status === 0) {
+                    $this->setError('usuário desativado!');
+                } else {
+
+                    $this->sessionStartLogin($token->id);
+                    $this->updateExpire($token->id);
+
+                }
+            } else {
+                $this->setError('usuário inválido! Por favor tente novamente');
+            }
         }
+    }
 
-        $user = new TableCrud($this->table);
-        $user->loadArray(array("email" => $this->email, "password" => $this->encryptMiddleEnd($this->senha)));
-        if ($user->exist()) {
-            $this->sessionStartLogin($user->getDados());
-        } else {
-            $this->error = 'usuário inválido! Por favor tente novamente';
+    private function isHuman()
+    {
+        if (defined("RECAPTCHA")) {
+            $recaptcha = new \ReCaptcha\ReCaptcha(RECAPTCHA);
+            $resp = $recaptcha->verify($_POST['g-recaptcha-response'], Helper::getIP());
+            if (!$resp->isSuccess()) {
+                $this->erro = "";
+                foreach ($resp->getErrorCodes() as $code) {
+                    $this->erro .= '<p>' . implode('</p><p>', $resp->getErrorCodes()) . '</p>';
+                }
+                return false;
+            }
         }
-    }
-
-    //Executa o login armazenando a sessão e cookies!
-    private function sessionStartLogin($dados)
-    {
-        if (!session_id()):
-            session_start();
-        endif;
-
-        unset($dados['password']);
-        $_SESSION['userlogin'] = $dados;
-        $this->setCookies();
-
-        $this->error = "Seja bem vindo(a) {$dados['nome']}. Aguarde redirecionamento!";
-        $this->result = true;
-    }
-
-    private function setCookies()
-    {
-        setcookie("pmail", $this->criptografar($this->senha), time() + (86400 * 30 * 3), "/");
-        setcookie("ppass", $this->criptografar($this->email), time() + (86400 * 30 * 3), "/");
-    }
-
-    /**
-     * <b>Criptografar:</b> Criptografa dados em uma determinada ordem, de modo a ser recuperada
-     */
-    private function criptografar($e)
-    {
-        return base64_encode(base64_encode("key" . $e . "noz") . "9");
-    }
-
-    private function encryptMiddle($senha)
-    {
-        return (string)md5("Control" . trim($senha) . "Session");
-    }
-
-    private function encryptMiddleEnd($senha)
-    {
-        $key1 = array('1', 'c', 's', '2', 'r', 'o', 'n', 'l', 'f', 'x', '0', 'k', 'v', '5', 'y');
-        $key2 = array('b', '4', '9', '6', 'w', 'a', 'd', '3', 'z', '7', 'j', 'm', '8', 'h', 't');
-        return md5(str_replace($key1, $key2, $senha));
-    }
-
-    private static function checkEmail($email)
-    {
-        $format = '/[a-z0-9_\.\-]+@[a-z0-9_\.\-]*[a-z0-9_\.\-]+\.[a-z]{2,4}$/';
-
-        if (preg_match($format, $email)):
-            return true;
-        else:
-            return false;
-        endif;
-    }
-
-    private function checkTableExist($table)
-    {
-        $table = (defined('PRE') && !preg_match('/^' . PRE . '/i', $table) ? PRE . $table : $table);
-        $db = DATABASE;
-        $read = new InfoTable();
-        $read->exeRead("COLUMNS", "WHERE TABLE_SCHEMA = :nb && TABLE_NAME = :nt", "nb={$db}&nt={$table}");
-        if (!$read->getResult()):
-            return false;
-        endif;
 
         return true;
     }
 
-    private function getPre()
+    private function encrypt($senha)
     {
-        return (defined('PRE') ? PRE : '');
+        $senha = md5("Control" . trim($senha) . "Session");
+        $key1 = array('1', 'c', 's', '2', 'r', 'o', 'n', 'l', 'f', 'x', '0', 'k', 'v', '5', 'y');
+        $key2 = array('b', '4', '9', '6', 'w', 'a', 'd', '3', 'z', '7', 'j', 'm', '8', 'h', 't');
+        return md5(str_replace($key1, $key2, $senha));
     }
 }

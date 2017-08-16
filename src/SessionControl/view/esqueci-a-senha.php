@@ -15,6 +15,6 @@
 <div class="row clearfix"></div>
 
 <div class="container col l6 m10 s12 push-m1 push-l3 al-right">
-    <a href="<?= defined('HOME') ? HOME . DIRECTORY_SEPARATOR : "" ?>login" class="white-text textshadow">voltar para
+    <a href="<?= defined('HOME') ? HOME . DIRECTORY_SEPARATOR : "" ?>login" class="grey-text upper">voltar para
         tela de login</a>
 </div>
