@@ -48,7 +48,6 @@ function newPassword() {
 function login() {
     if (loginFree) {
         loginFree = false;
-
         $.post(HOME + 'vendor/conn/session-control/src/SessionControl/request/login.php', {
             email: $("#emaillog").val(),
             pass: $("#passlog").val(),
@@ -58,7 +57,9 @@ function login() {
             if (g['status'] === "1") {
                 window.location.href = HOME + 'login';
             } else if (g['status'] === "2") {
-                Materialize.toast(g['mensagem'], 3000);
+                setTimeout(function () {
+                    Materialize.toast(g['mensagem'], 2500);
+                }, 2500);
             } else {
                 Materialize.toast("Erro Desconhecido", 3000);
                 console.log(g);

@@ -2,7 +2,6 @@
 require('../../../../../../_config/config.php');
 
 use SessionControl\Login;
-use ConnCrud\Read;
 use Helpers\Helper;
 
 $dados['email'] = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
@@ -33,12 +32,8 @@ if ($dados['email'] && $dados['password']) {
 
         checkExisteTables();
 
-        $read = new Read();
-        $read->exeRead(PRE . "user_attempt", "WHERE data > DATE_SUB(NOW(), INTERVAL 15 MINUTE) && ip = :ip", "ip={$ip}");
-        if ($read->getResult() && $read->getRowCount() > 6) {
-            echo json_encode(array("status" => "2", "mensagem" => "tente novamente mais tarde"));
-        } else {
-
+        $login = new Login();
+        if(!$login->checkMaxAttemptsExceded()) {
             $login = new Login();
             $login->exeLogin($dados);
             if (!$login->getResult()) {
@@ -47,8 +42,8 @@ if ($dados['email'] && $dados['password']) {
                 $attempt->loadArray(array("ip" => $ip, "data" => date("Y-m-d H:i:s"), "email" => $dados['email'], "password" => criptografar($dados['password'])));
                 $attempt->save();
 
-                $cont = 6 - $read->getRowCount();
-                $mensagem = $login->getError() . " " . ($cont > 0 ? "{$cont} tentativas para bloqueio temporário" : " bloqueado por 15 minutos");
+                $cont = 10 - $read->getRowCount();
+                $mensagem = $login->getError() . " " . ($cont > 0 ? "{$cont} tentativas faltantes" : " bloqueado por 15 minutos");
 
                 echo json_encode(array("status" => "2", "mensagem" => $mensagem));
 
@@ -56,6 +51,8 @@ if ($dados['email'] && $dados['password']) {
 
                 echo json_encode(array("status" => "1", "mensagem" => "login com sucesso"));
             }
+        } else {
+            echo json_encode(array("status" => "2", "mensagem" => "tente novamente mais tarde"));
         }
     } else {
         echo json_encode(array("status" => "2", "mensagem" => "erro de autentificação"));

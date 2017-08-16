@@ -9,6 +9,7 @@
 
 namespace SessionControl;
 
+use \ConnCrud\Read;
 use \ConnCrud\TableCrud;
 use Helpers\Check;
 use Helpers\Helper;
@@ -41,6 +42,30 @@ class Login extends StartSession
     public function setRecaptcha($recaptcha)
     {
         $this->recaptcha = $recaptcha;
+    }
+
+    public function checkAttemptsExceded()
+    {
+        $ip = filter_var(Helper::getIP(), FILTER_VALIDATE_IP);
+        $read = new Read();
+        $read->exeRead(PRE . "user_attempt", "WHERE data > DATE_SUB(NOW(), INTERVAL 15 MINUTE) && ip = :ip", "ip={$ip}");
+        if ($read->getResult() && $read->getRowCount() > 3) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public function checkMaxAttemptsExceded()
+    {
+        $ip = filter_var(Helper::getIP(), FILTER_VALIDATE_IP);
+        $read = new Read();
+        $read->exeRead(PRE . "user_attempt", "WHERE data > DATE_SUB(NOW(), INTERVAL 15 MINUTE) && ip = :ip && email = :em", "ip={$ip}&em={$this->email}");
+        if ($read->getResult() && $read->getRowCount() > 10) {
+            return true;
+        }
+
+        return false;
     }
 
     public function logOut()
@@ -113,7 +138,12 @@ class Login extends StartSession
 
     private function isHuman()
     {
-        if (defined("RECAPTCHA") && $this->recaptcha) {
+        if (defined("RECAPTCHA") && $this->checkAttemptsExceded()) {
+            if(empty($this->recaptcha)) {
+                $this->setError("resolva o captcha");
+                return false;
+            }
+
             $recaptcha = new \ReCaptcha\ReCaptcha(RECAPTCHA);
             $resp = $recaptcha->verify($this->recaptcha, filter_var(Helper::getIP(), FILTER_VALIDATE_IP));
             if (!$resp->isSuccess()) {

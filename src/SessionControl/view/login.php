@@ -1,5 +1,6 @@
 <?php
 if (VISITANTE) {
+    $log = new \SessionControl\Login();
     ?>
     <div class='container al-center font-size13 grey-text upper'>área restrita</div>
     <div class="card container col l6 m10 s12 push-m1 push-l3 center-align pd-content30">
@@ -16,7 +17,7 @@ if (VISITANTE) {
             </div>
         </div>
 
-        <?php if (defined("RECAPTCHASITE")) { ?>
+        <?php if (defined("RECAPTCHASITE") && $log->checkAttemptsExceded()) { ?>
             <div class="container">
                 <div class="g-recaptcha" data-sitekey="<?= RECAPTCHASITE ?>"></div>
                 <br>
