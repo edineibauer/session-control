@@ -31,7 +31,7 @@ function login() {
             g = JSON.parse(g);
             console.log(g);
             if (g['status'] === "1") {
-                window.location.href = HOME + '/login';
+                window.location.href = HOME + 'login';
             } else if (g['status'] === "2") {
                 Materialize.toast(g['mensagem'], 3000);
             } else {

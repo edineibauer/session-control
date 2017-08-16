@@ -38,7 +38,7 @@ if (VISITANTE) {
     <div class="row clearfix"></div>
 
     <div class="container col l6 m10 s12 push-m1 push-l3 al-right">
-        <a href="<?= defined('HOME') ? HOME . DIRECTORY_SEPARATOR : "" ?>esquici-a-senha"
+        <a href="<?= defined('HOME') ? HOME : "" ?>esquici-a-senha"
            class="upper font-size09 teal-text">esqueci a senha</a>
     </div>
 
