@@ -32,7 +32,7 @@ class Login extends StartSession
      */
     public function setSenha($senha)
     {
-        $this->senha = (string)$this->encrypt(trim($senha));
+        $this->senha = (string)$this->encrypt(strip_tags(trim($senha)));
     }
 
     /**
@@ -41,6 +41,23 @@ class Login extends StartSession
     public function setRecaptcha($recaptcha)
     {
         $this->recaptcha = $recaptcha;
+    }
+
+    public function logOut()
+    {
+        if(!VISITANTE && isset($_SESSION['userlogin']['token'])) {
+            $token = new TableCrud("user_token");
+            $token->load($_SESSION['userlogin']['token']);
+            if ($token->exist()) {
+                $token->token = "";
+                $token->expire = "";
+                $token->save();
+                $this->setResult("Desconectado, redirecionando...");
+            }
+
+            setcookie("token", 0, time() - 1, "/");
+            unset($_SESSION['userlogin']);
+        }
     }
 
     /**
@@ -66,6 +83,8 @@ class Login extends StartSession
             $this->setError('Email e Senha são necessários para efetuar o login!');
         } elseif (!Check::email($this->email)) {
             $this->setError('Formato de Email inválido!');
+        } elseif (!VISITANTE) {
+            $this->setError('Você já esta logado atualmente.');
         } else {
             $this->checkUserInfo();
         }
@@ -87,7 +106,7 @@ class Login extends StartSession
 
                 }
             } else {
-                $this->setError('usuário inválido! Por favor tente novamente');
+                $this->setError('usuário inválido!');
             }
         }
     }
