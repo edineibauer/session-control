@@ -19,6 +19,7 @@ class Login extends StartSession
     private $email;
     private $senha;
     private $recaptcha;
+    private $attempts = 0;
 
     /**
      * @param string $email
@@ -44,6 +45,14 @@ class Login extends StartSession
         $this->recaptcha = $recaptcha;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getAttempts()
+    {
+        return $this->attempts;
+    }
+
     public function checkAttemptsExceded()
     {
         $ip = filter_var(Helper::getIP(), FILTER_VALIDATE_IP);
@@ -64,6 +73,7 @@ class Login extends StartSession
         if ($read->getResult() && $read->getRowCount() > 10) {
             return true;
         }
+        $this->attempts = $read->getRowCount();
 
         return false;
     }

@@ -42,7 +42,7 @@ if ($dados['email'] && $dados['password']) {
                 $attempt->loadArray(array("ip" => $ip, "data" => date("Y-m-d H:i:s"), "email" => $dados['email'], "password" => criptografar($dados['password'])));
                 $attempt->save();
 
-                $cont = 10 - $read->getRowCount();
+                $cont = 10 - $login->getAttempts();
                 $mensagem = $login->getError() . " " . ($cont > 0 ? "{$cont} tentativas faltantes" : " bloqueado por 15 minutos");
 
                 echo json_encode(array("status" => "2", "mensagem" => $mensagem));
