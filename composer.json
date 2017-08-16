@@ -2,6 +2,7 @@
   "name": "conn/session-control",
   "description": "Controle de Sessão para login de usuários",
   "type": "library",
+  "version": "0.95",
   "license": "MIT",
   "minimum-stability": "dev",
   "authors": [
