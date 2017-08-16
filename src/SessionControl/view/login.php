@@ -22,6 +22,8 @@ if (VISITANTE) {
                 <br>
             </div>
             <script type="text/javascript" src="https://www.google.com/recaptcha/api.js"></script>
+        <?php } else { ?>
+            <input type="hidden" id="g-recaptcha-response"/>
         <?php } ?>
 
         <div class="container pd-medium al-center" style="float:initial">

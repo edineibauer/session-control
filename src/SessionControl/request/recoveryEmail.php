@@ -1,4 +1,5 @@
 <?php
+require('../../../../../../_config/config.php');
 
 use \ConnCrud\TableCrud;
 

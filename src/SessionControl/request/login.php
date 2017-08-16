@@ -1,7 +1,5 @@
 <?php
-require('../../../_config/config.php');
-
-
+require('../../../../../../_config/config.php');
 
 use SessionControl\Login;
 use ConnCrud\Read;
@@ -9,6 +7,7 @@ use Helpers\Helper;
 
 $dados['email'] = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
 $dados['password'] = filter_input(INPUT_POST, "pass", FILTER_DEFAULT);
+$dados['recaptcha'] = filter_input(INPUT_POST, "recaptcha", FILTER_DEFAULT);
 
 if ($dados['email'] && $dados['password']) {
 
@@ -49,7 +48,9 @@ if ($dados['email'] && $dados['password']) {
                 $attempt->save();
 
                 $cont = 6 - $read->getRowCount();
-                echo json_encode(array("status" => "2", "mensagem" => "login inválido! " . ($cont > 0 ? "{$cont} tentativas para bloqueio temporário" : " bloqueado por 15 minutos")));
+                $mensagem = $login->getError() . " " . ($cont > 0 ? "{$cont} tentativas para bloqueio temporário" : " bloqueado por 15 minutos");
+
+                echo json_encode(array("status" => "2", "mensagem" => $mensagem));
 
             } else {
 

@@ -2,9 +2,9 @@
   "name": "conn/session-control",
   "description": "Controle de Sessão para login de usuários",
   "type": "library",
-  "version": "1.0",
   "license": "MIT",
-  "minimum-stability": "dev",
+  "version": "1.0",
+  "minimum-stability": "0.9",
   "authors": [
     {
       "name": "Edinei J. Bauer",

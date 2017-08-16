@@ -1,6 +1,5 @@
 <?php
-require('../../../vendor/autoload.php');
-require('../../../_config/config.php');
+require('../../../../../../_config/config.php');
 
 var_dump($_SESSION);
 

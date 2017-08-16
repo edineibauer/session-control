@@ -4,7 +4,7 @@ var loginFree = true;
 function recoveryEmail() {
     if (recoveryFree) {
         recoveryFree = false;
-        $.post(HOME + '/src/SessionControl/request/recoveryEmail.php', {email: $("#recovery-email").val()}, function (g) {
+        $.post(HOME + 'vendor/conn/session-control/src/SessionControl/request/recoveryEmail.php', {email: $("#recovery-email").val()}, function (g) {
             if (g === "1") {
                 $("#recovery-email").val("");
                 Materialize.toast('Link de Recuperação enviada ao email', 4000);
@@ -23,9 +23,10 @@ function login() {
     if (loginFree) {
         loginFree = false;
 
-        $.post(HOME + '/src/SessionControl/request/login.php', {
+        $.post(HOME + 'vendor/conn/session-control/src/SessionControl/request/login.php', {
             email: $("#emaillog").val(),
-            pass: $("#passlog").val()
+            pass: $("#passlog").val(),
+            recaptcha: $("#g-recaptcha-response").val()
         }, function (g) {
             g = JSON.parse(g);
             console.log(g);

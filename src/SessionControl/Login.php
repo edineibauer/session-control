@@ -17,7 +17,7 @@ class Login extends StartSession
 {
     private $email;
     private $senha;
-    private $erro;
+    private $recaptcha;
 
     /**
      * @param string $email
@@ -36,6 +36,14 @@ class Login extends StartSession
     }
 
     /**
+     * @param mixed $recaptcha
+     */
+    public function setRecaptcha($recaptcha)
+    {
+        $this->recaptcha = $recaptcha;
+    }
+
+    /**
      * <b>Efetuar Login:</b> Envelope um array atribuitivo com índices STRING user [email], STRING pass.
      * Ao passar este array na ExeLogin() os dados são verificados e o login é feito!
      * @param $data = user [email], pass
@@ -45,6 +53,9 @@ class Login extends StartSession
         if (isset($data['email']) && isset($data['password'])) {
             $this->setEmail($data['email']);
             $this->setSenha($data['password']);
+            if(isset($data['recaptcha']) && !empty($data['recaptcha'])) {
+                $this->setRecaptcha($data['recaptcha']);
+            }
         }
         $this->setLogin();
     }
@@ -83,14 +94,11 @@ class Login extends StartSession
 
     private function isHuman()
     {
-        if (defined("RECAPTCHA")) {
+        if (defined("RECAPTCHA") && $this->recaptcha) {
             $recaptcha = new \ReCaptcha\ReCaptcha(RECAPTCHA);
-            $resp = $recaptcha->verify($_POST['g-recaptcha-response'], Helper::getIP());
+            $resp = $recaptcha->verify($this->recaptcha, filter_var(Helper::getIP(), FILTER_VALIDATE_IP));
             if (!$resp->isSuccess()) {
-                $this->erro = "";
-                foreach ($resp->getErrorCodes() as $code) {
-                    $this->erro .= '<p>' . implode('</p><p>', $resp->getErrorCodes()) . '</p>';
-                }
+                $this->setError('<p>' . implode('</p><p>', $resp->getErrorCodes()) . '</p>');
                 return false;
             }
         }
