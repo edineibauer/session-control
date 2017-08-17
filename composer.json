@@ -12,8 +12,10 @@
   "require": {
     "php": "^7.0",
     "conn/conn-crud": "^1.1",
+    "conn/link-control": "^1",
     "conn/email-control": "^1",
-    "google/recaptcha": "~1.1"
+    "google/recaptcha": "~1.1",
+    "conn/session-control": "^1.0"
   },
   "autoload": {
     "psr-0": {
