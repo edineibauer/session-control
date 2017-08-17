@@ -6,7 +6,11 @@ var logoutFree = true;
 function recoveryEmail() {
     if (recoveryFree) {
         recoveryFree = false;
-        $.post(HOME + 'vendor/conn/session-control/src/SessionControl/request/recoveryEmail.php', {email: $("#recovery-email").val()}, function (g) {
+        $.post(HOME + 'request/get', {
+            lib: 'session-control',
+            url: 'recoveryEmail',
+            email: $("#recovery-email").val()
+        }, function (g) {
             if (g === "1") {
                 $("#recovery-email").val("");
                 Materialize.toast('Link de Recuperação enviada ao email', 4000);
@@ -25,7 +29,12 @@ function newPassword() {
     if (novaSenha) {
         novaSenha = false;
         if ($("#nova-senha").val() === $("#nova-senha-confirm").val()) {
-            $.post(HOME + 'vendor/conn/session-control/src/SessionControl/request/setNewPassword.php', {senha: $("#nova-senha").val(), code: $("#code").val()}, function (g) {
+            $.post(HOME + 'request/get', {
+                lib: 'session-control',
+                url: 'setNewPassword',
+                senha: $("#nova-senha").val(),
+                code: $("#code").val()
+            }, function (g) {
                 if (g === "1") {
                     Materialize.toast('Senha Modificada, redirecionando...', 2000);
                     setTimeout(function () {
@@ -48,7 +57,9 @@ function newPassword() {
 function login() {
     if (loginFree) {
         loginFree = false;
-        $.post(HOME + 'vendor/conn/session-control/src/SessionControl/request/login.php', {
+        $.post(HOME + 'request/get', {
+            lib: 'session-control',
+            url: 'login',
             email: $("#emaillog").val(),
             pass: $("#passlog").val(),
             recaptcha: $("#g-recaptcha-response").val()
@@ -73,7 +84,7 @@ function logout() {
     if (logoutFree) {
         logoutFree = false;
 
-        $.post(HOME + 'vendor/conn/session-control/src/SessionControl/request/logout.php', function (g) {
+        $.post(HOME + 'request/get', {lib: 'session-control', url: 'logout'}, function (g) {
             g = JSON.parse(g);
             if (g['status'] === "1") {
                 Materialize.toast(g['mensagem'], 2000);
