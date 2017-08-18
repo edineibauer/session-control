@@ -1,6 +1,4 @@
 <?php
-require('../../../../../../_config/config.php');
-
 use \ConnCrud\TableCrud;
 
 $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);

@@ -1,6 +1,4 @@
 <?php
-require('../../../../../../_config/config.php');
-
 use SessionControl\Login;
 use Helpers\Helper;
 

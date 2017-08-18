@@ -1,6 +1,4 @@
 <?php
-require('../../../../../../_config/config.php');
-
 use \ConnCrud\TableCrud;
 
 $senha = strip_tags(trim(filter_input(INPUT_POST, 'senha', FILTER_DEFAULT)));

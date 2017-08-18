@@ -1,6 +1,4 @@
 <?php
-require('../../../../../../_config/config.php');
-
 $login = new \SessionControl\Login();
 $login->logOut();
 
