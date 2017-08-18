@@ -6,7 +6,6 @@
     "js": [
       "jquery",
       "materialize",
-      "boot",
       "login"
     ],
     "css": [
