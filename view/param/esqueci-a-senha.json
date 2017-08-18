@@ -12,7 +12,8 @@
     "css": [
       "materialize",
       "fonts",
-      "helper"
+      "helper",
+      "login"
     ]
   }
 }
