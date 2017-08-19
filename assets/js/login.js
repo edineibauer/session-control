@@ -8,7 +8,7 @@ function recoveryEmail() {
         recoveryFree = false;
         $.get(HOME + 'request/get', {
             lib: 'session-control',
-            url: 'recoveryEmail',
+            file: 'recoveryEmail',
             email: $("#recovery-email").val()
         }, function (g) {
             if (g === "1") {
@@ -31,7 +31,7 @@ function newPassword() {
         if ($("#nova-senha").val() === $("#nova-senha-confirm").val()) {
             $.post(HOME + 'request/post', {
                 lib: 'session-control',
-                url: 'setNewPassword',
+                file: 'setNewPassword',
                 senha: $("#nova-senha").val(),
                 code: $("#code").val()
             }, function (g) {
@@ -59,7 +59,7 @@ function login() {
         loginFree = false;
         $.post(HOME + 'request/post', {
             lib: 'session-control',
-            url: 'login',
+            file: 'login',
             email: $("#emaillog").val(),
             pass: $("#passlog").val(),
             recaptcha: $("#g-recaptcha-response").val()
@@ -85,7 +85,7 @@ function logout() {
     if (logoutFree) {
         logoutFree = false;
 
-        $.get(HOME + 'request/get', {lib: 'session-control', url: 'logout'}, function (g) {
+        $.get(HOME + 'request/get', {lib: 'session-control', file: 'logout'}, function (g) {
             g = JSON.parse(g);
             if (g['status'] === "1") {
                 Materialize.toast(g['mensagem'], 2000);
