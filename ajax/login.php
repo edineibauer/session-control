@@ -1,4 +1,5 @@
 <?php
+
 use SessionControl\Login;
 use Helpers\Helper;
 
@@ -35,7 +36,11 @@ if ($dados['email'] && $dados['password']) {
         $login->setSenha($dados['password']);
         if(!$login->checkMaxAttemptsExceded()) {
             $login->exeLogin();
-            if (!$login->getResult()) {
+            if ($login->getResult()) {
+
+                echo json_encode(array("status" => "1", "mensagem" => $login->getError()));
+
+            } else {
 
                 $attempt = new \ConnCrud\TableCrud("user_attempt");
                 $attempt->loadArray(array("ip" => $ip, "data" => date("Y-m-d H:i:s"), "email" => $dados['email'], "password" => criptografar($dados['password'])));
@@ -46,12 +51,9 @@ if ($dados['email'] && $dados['password']) {
 
                 echo json_encode(array("status" => "2", "mensagem" => $mensagem));
 
-            } else {
-
-                echo json_encode(array("status" => "1", "mensagem" => "login com sucesso"));
             }
         } else {
-            echo json_encode(array("status" => "2", "mensagem" => "tente novamente mais tarde"));
+            echo json_encode(array("status" => "2", "mensagem" => "tentativas excedidas, tente novamente mais tarde"));
         }
     } else {
         echo json_encode(array("status" => "2", "mensagem" => "erro de autentificação"));

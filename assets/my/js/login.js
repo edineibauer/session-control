@@ -66,11 +66,12 @@ function login() {
         }, function (g) {
             g = JSON.parse(g);
             if (g['status'] === "1") {
-                window.location.href = HOME + 'login';
-            } else if (g['status'] === "2") {
+                Materialize.toast(g['mensagem'], 2000);
                 setTimeout(function () {
-                    Materialize.toast(g['mensagem'], 2500);
-                }, 2500);
+                    window.location.href = HOME + 'login';
+                }, 2000);
+            } else if (g['status'] === "2") {
+                Materialize.toast(g['mensagem'], 2500);
             } else {
                 Materialize.toast("Erro Desconhecido", 3000);
                 console.log(g);
