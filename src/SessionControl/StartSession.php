@@ -66,10 +66,6 @@ abstract class StartSession
     //Executa o login armazenando a sessão e cookies!
     protected function sessionStartLogin($id)
     {
-        if (!session_id()):
-            session_start();
-        endif;
-
         $user = new TableCrud("user");
         $user->load('token', $id);
         if ($user->exist()) {
@@ -84,12 +80,14 @@ abstract class StartSession
     {
         $token = new TableCrud("user_token");
         $token->load($id);
-        $token->token = $this->getToken();
-        $expireTwoMonth = new \DateTime();
-        $token->expire = $expireTwoMonth->modify('+2 month')->format('Y-m-d H:i:s');
-        $token->save();
+        if($token->exist()) {
+            $token->token = $this->getToken();
+            $expireTwoMonth = new \DateTime();
+            $token->expire = $expireTwoMonth->modify('+2 month')->format('Y-m-d H:i:s');
+            $token->save();
 
-        $this->setCookie($token->token);
+            $this->setCookie($token->token);
+        }
     }
 
     private function setCookie($token)

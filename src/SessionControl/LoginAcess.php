@@ -97,6 +97,7 @@ class LoginAcess extends StartSession
 
                 $this->sessionStartLogin($token->id);
                 $this->updateExpire($token->id);
+                $this->logged = true;
 
             } else {
                 $token->expire = date("Y-m-d H:i:s");
