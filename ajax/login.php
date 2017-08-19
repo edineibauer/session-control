@@ -31,9 +31,10 @@ if ($dados['email'] && $dados['password']) {
         checkExisteTables();
 
         $login = new Login();
+        $login->setEmail($dados['email']);
+        $login->setSenha($dados['password']);
         if(!$login->checkMaxAttemptsExceded()) {
-            $login = new Login();
-            $login->exeLogin($dados);
+            $login->exeLogin();
             if (!$login->getResult()) {
 
                 $attempt = new \ConnCrud\TableCrud("user_attempt");

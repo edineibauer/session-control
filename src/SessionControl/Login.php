@@ -69,13 +69,10 @@ class Login extends StartSession
     {
         $ip = filter_var(Helper::getIP(), FILTER_VALIDATE_IP);
         $read = new Read();
-        $read->exeRead(PRE . "user_attempt", "WHERE data > DATE_SUB(NOW(), INTERVAL 15 MINUTE) && ip = :ip && email = :em", "ip={$ip}&em={$this->email}");
-        if ($read->getResult() && $read->getRowCount() > 10) {
-            return true;
-        }
+        $read->exeRead(PRE . "user_attempt", "WHERE data > DATE_SUB(NOW(), INTERVAL 15 MINUTE) && ip = '{$ip}' && email = '{$this->email}'");
         $this->attempts = $read->getRowCount();
 
-        return false;
+        return ($this->attempts > 10); // maximo de 10 tentativas por IP e email iguais em um intervalo de 15 minutos
     }
 
     public function logOut()
