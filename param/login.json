@@ -12,6 +12,9 @@
       "materialize",
       "nena-font",
       "nena-helper"
+    ],
+    "font": [
+      "roboto"
     ]
   },
   "dependencies": {
