@@ -6,7 +6,7 @@ var logoutFree = true;
 function recoveryEmail() {
     if (recoveryFree) {
         recoveryFree = false;
-        $.get(HOME + 'request/get', {
+        $.post(HOME + 'request/post', {
             lib: 'session-control',
             file: 'recoveryEmail',
             email: $("#recovery-email").val()
@@ -85,7 +85,7 @@ function logout() {
     if (logoutFree) {
         logoutFree = false;
 
-        $.get(HOME + 'request/get', {lib: 'session-control', file: 'logout'}, function (g) {
+        $.post(HOME + 'request/post', {lib: 'session-control', file: 'logout'}, function (g) {
             g = JSON.parse(g);
             if (g['status'] === "1") {
                 Materialize.toast(g['mensagem'], 2000);
