@@ -2,7 +2,7 @@
     <div class="card container col l6 m10 s12 push-m1 push-l3 center-align pd-content30">
         <div class="row">
             <div class="input-field container">
-                <input id="recovery-email" onkeyup="clickSend('send-email-recover', event)" type="email"
+                <input id="recovery-email" onkeyup="triggerButton('send-email-recover', event)" type="email"
                        class="validate">
                 <label for="emaillog">Digite seu Email</label>
             </div>

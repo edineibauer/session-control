@@ -7,13 +7,13 @@ if (VISITANTE) {
         <div class="card container col l6 m10 s12 push-m1 push-l3 center-align pd-content30">
             <div class="row">
                 <div class="input-field container">
-                    <input id="emaillog" onkeyup="clickSend('loginbtn', event)" type="email" class="validate">
+                    <input id="emaillog" onkeyup="triggerButton('loginbtn', event)" type="email" class="validate">
                     <label for="emaillog">Email</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field container">
-                    <input id="passlog" onkeyup="clickSend('loginbtn', event)" type="password" class="validate">
+                    <input id="passlog" onkeyup="triggerButton('loginbtn', event)" type="password" class="validate">
                     <label for="passlog">Senha</label>
                 </div>
             </div>
