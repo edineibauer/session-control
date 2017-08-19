@@ -2,16 +2,23 @@
   "title": "Esqueci a Senha",
   "subtitle": "restauração da senha",
   "type": "page",
-  "dependencies": {
+  "libraries": {
     "js": [
       "jquery",
       "materialize",
-      "login"
+      "nena-reboot"
     ],
     "css": [
       "materialize",
-      "fonts",
-      "helper",
+      "nena-font",
+      "nena-helper"
+    ]
+  },
+  "dependencies": {
+    "js": [
+      "login"
+    ],
+    "css": [
       "login"
     ]
   }
