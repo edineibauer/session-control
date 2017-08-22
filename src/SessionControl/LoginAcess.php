@@ -100,9 +100,11 @@ class LoginAcess extends StartSession
                 $this->logged = true;
 
             } else {
-                $token->expire = date("Y-m-d H:i:s");
-                $token->token = "";
-                $token->save();
+                if($token->exist()) {
+                    $token->expire = date("Y-m-d H:i:s");
+                    $token->token = "";
+                    $token->save();
+                }
 
                 $this->mensagem = "Informações do Cookie não válidos";
                 $this->unsetCookie();
