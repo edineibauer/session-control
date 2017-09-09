@@ -1,0 +1,19 @@
+{
+  "id": {
+    "type": "pri"
+  },
+  "user": {
+    "type": "1-1",
+    "table": "user",
+    "follow": false
+  },
+  "url": {
+    "type": "text",
+    "size": 255,
+    "null": false
+  },
+  "data": {
+    "type": "date",
+    "null": false
+  }
+}

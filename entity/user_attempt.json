@@ -1,0 +1,18 @@
+{
+  "id": {
+    "type": "pri"
+  },
+  "data": {
+    "type": "date",
+    "null": false
+  },
+  "ip": {
+    "type": "text",
+    "size": 32,
+    "null": false
+  },
+  "email": {
+    "type": "email",
+    "null": false
+  }
+}

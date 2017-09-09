@@ -1,7 +1,6 @@
 <?php
 
 use SessionControl\Login;
-use Helpers\Helper;
 
 $dados['email'] = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
 $dados['password'] = filter_input(INPUT_POST, "pass", FILTER_DEFAULT);
@@ -16,8 +15,9 @@ if ($dados['email'] && $dados['password']) {
         $read = new \ConnCrud\InfoTable();
         $read->exeRead("COLUMNS", "WHERE TABLE_SCHEMA = :nb && TABLE_NAME = :nt", "nb={$db}&nt={$table}");
         if (!$read->getResult()):
-            $database = new \SessionControl\LoginDataBase();
-            $database->createDataBase();
+            new \Entity\Entity("image_control", "session-control");
+            new \Entity\Entity("user_attempt", "session-control");
+            new \Entity\Entity("user_history", "session-control");
         endif;
     }
 

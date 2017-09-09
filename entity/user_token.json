@@ -1,0 +1,33 @@
+{
+  "id": {
+    "type": "pri"
+  },
+  "expire": {
+    "type": "date",
+    "null": false,
+    "list": true
+  },
+  "token": {
+    "type": "text",
+    "size": 127,
+    "null": false
+  },
+  "email": {
+    "type": "email",
+    "null": false,
+    "list": true
+  },
+  "password": {
+    "type": "password",
+    "null": false
+  },
+  "status": {
+    "type": "status",
+    "default": 1,
+    "list": true
+  },
+  "restore_code": {
+    "type": "text",
+    "size": 127
+  }
+}
