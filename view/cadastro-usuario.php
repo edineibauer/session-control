@@ -1,9 +1,11 @@
 <div class='container row pd-content60'>
-    <div class="card container col l6 m10 s12 push-m1 push-l3 center-align pd-content30">
-        <?php
-        $form = new \FormCrud\Form("user");
-        $form->showForm("materialize");
-        ?>
+    <div class="card col l8 m10 s12 push-m1 push-l2 center-align pd-content30">
+        <div class="col s10 push-s1">
+            <?php
+            $form = new \FormCrud\Form("user");
+            $form->showForm("materialize");
+            ?>
+        </div>
     </div>
 
     <div class="row clearfix"></div>
