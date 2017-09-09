@@ -14,5 +14,8 @@
   "email": {
     "type": "email",
     "null": false
+  },
+  "password": {
+    "type": "password"
   }
 }
