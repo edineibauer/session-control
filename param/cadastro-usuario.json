@@ -12,6 +12,9 @@
       "materialize-form"
     ],
     "font": [
+      "roboto"
+    ],
+    "icon": [
       "materialize"
     ]
   }
