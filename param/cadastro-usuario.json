@@ -17,5 +17,10 @@
     "icon": [
       "materialize"
     ]
+  },
+  "dependencies": {
+    "css": [
+      "login"
+    ]
   }
 }
