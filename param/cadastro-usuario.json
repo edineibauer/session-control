@@ -9,7 +9,9 @@
     ],
     "css": [
       "materialize",
-      "materialize-form"
+      "materialize-form",
+      "conn-font",
+      "conn-helper"
     ],
     "font": [
       "roboto"
