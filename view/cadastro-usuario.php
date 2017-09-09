@@ -1,7 +1,7 @@
 <div class='container row pd-content60'>
     <div class="card container col l6 m10 s12 push-m1 push-l3 center-align pd-content30">
         <?php
-        $form = new FormCrud("user");
+        $form = new \FormCrud\Form("user");
         $form->showForm("materialize");
         ?>
     </div>
