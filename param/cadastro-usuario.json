@@ -1,0 +1,16 @@
+{
+  "title": "Cadastro de Novo Usuário",
+  "type": "page",
+  "libraries": {
+    "js": [
+      "jquery",
+      "materialize"
+    ],
+    "css": [
+      "materialize"
+    ],
+    "font": [
+      "materialize"
+    ]
+  }
+}

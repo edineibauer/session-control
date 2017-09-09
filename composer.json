@@ -12,6 +12,7 @@
   "require": {
     "php": "^7.0",
     "conn/config": "^1",
+    "conn/form-crud": "^1",
     "conn/email-control": "^1",
     "google/recaptcha": "~1.1"
   },

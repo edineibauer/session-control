@@ -3,7 +3,7 @@
     "type": "pri"
   },
   "data": {
-    "type": "date",
+    "type": "datetime",
     "null": false
   },
   "ip": {
@@ -16,6 +16,7 @@
     "null": false
   },
   "password": {
-    "type": "password"
+    "type": "password",
+    "null": true
   }
 }
