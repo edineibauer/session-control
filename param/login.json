@@ -6,7 +6,7 @@
     "js": [
       "jquery",
       "materialize",
-      "conn-boot"
+      "conn"
     ],
     "css": [
       "materialize",
