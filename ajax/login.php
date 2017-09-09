@@ -1,6 +1,7 @@
 <?php
 
 use SessionControl\Login;
+use Helpers\Helper;
 
 $dados['email'] = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
 $dados['password'] = filter_input(INPUT_POST, "pass", FILTER_DEFAULT);
