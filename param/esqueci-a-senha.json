@@ -6,12 +6,12 @@
     "js": [
       "jquery",
       "materialize",
-      "nena-boot"
+      "conn-boot"
     ],
     "css": [
       "materialize",
-      "nena-font",
-      "nena-helper"
+      "conn-font",
+      "conn-helper"
     ],
     "font": [
       "roboto"
