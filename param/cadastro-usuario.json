@@ -4,10 +4,12 @@
   "libraries": {
     "js": [
       "jquery",
-      "materialize"
+      "materialize",
+      "materialize-form"
     ],
     "css": [
-      "materialize"
+      "materialize",
+      "materialize-form"
     ],
     "font": [
       "materialize"
