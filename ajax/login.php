@@ -11,15 +11,11 @@ if ($dados['email'] && $dados['password']) {
 
     function checkExisteTables()
     {
-        $table = (defined('PRE') ? PRE : "") . "user_attempt";
-        $db = DATABASE;
-        $read = new \ConnCrud\InfoTable();
-        $read->exeRead("COLUMNS", "WHERE TABLE_SCHEMA = :nb && TABLE_NAME = :nt", "nb={$db}&nt={$table}");
-        if (!$read->getResult()):
+        if(!file_exists(PATH_HOME . "vendor/conn/session-control/entity/cache/user.json")) {
             new \Entity\Entity("image_control", "session-control");
             new \Entity\Entity("user_attempt", "session-control");
             new \Entity\Entity("user_history", "session-control");
-        endif;
+        }
     }
 
     function criptografar($e)

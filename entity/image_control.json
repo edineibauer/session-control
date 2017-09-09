@@ -1,4 +1,7 @@
 {
+  "id": {
+    "type": "pri"
+  },
   "gallery": {
     "type": "1-n",
     "table": "gallery",
