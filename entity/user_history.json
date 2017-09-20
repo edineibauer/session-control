@@ -3,9 +3,8 @@
     "type": "pri"
   },
   "user": {
-    "type": "1-1",
-    "table": "user",
-    "follow": false
+    "type": "list",
+    "table": "user"
   },
   "url": {
     "type": "text",

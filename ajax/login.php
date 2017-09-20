@@ -11,10 +11,16 @@ if ($dados['email'] && $dados['password']) {
 
     function checkExisteTables()
     {
-        if(!file_exists(PATH_HOME . "vendor/conn/session-control/entity/cache/user.json")) {
-            new \Entity\Entity("image_control", "session-control");
-            new \Entity\Entity("user_attempt", "session-control");
-            new \Entity\Entity("user_history", "session-control");
+        if(!file_exists(PATH_HOME . "entity/cache/user.json")) {
+            Helper::createFolderIfNoExist(PATH_HOME . "entity");
+            foreach (Helper::listFolder(PATH_HOME . 'vendor/conn/session-control/entity') as $item) {
+                copy(PATH_HOME . 'vendor/conn/session-control/entity/' . $item, PATH_HOME . 'entity/' . $item);
+                unlink(PATH_HOME . 'vendor/conn/session-control/entity/' . $item);
+            }
+
+            new \Entity\Entity("image_control");
+            new \Entity\Entity("user_attempt");
+            new \Entity\Entity("user_history");
         }
     }
 

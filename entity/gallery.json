@@ -20,11 +20,11 @@
     "list": true
   },
   "user": {
-    "type": "1-n",
+    "type": "list",
     "table": "user",
     "edit": false,
     "null": false,
-    "follow": false
+    "update": false
   },
   "folder": {
     "type": "text",

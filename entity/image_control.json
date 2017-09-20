@@ -3,7 +3,7 @@
     "type": "pri"
   },
   "gallery": {
-    "type": "1-n",
+    "type": "extend",
     "table": "gallery",
     "null": false
   },
