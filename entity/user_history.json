@@ -1,18 +1,22 @@
 {
   "id": {
-    "type": "pri"
+    "type": "pri",
+    "identificador": 0
   },
   "user": {
     "type": "list",
-    "table": "user"
+    "table": "user",
+    "identificador": 1
   },
   "url": {
     "type": "text",
     "size": 255,
-    "null": false
+    "null": false,
+    "identificador": 2
   },
   "data": {
     "type": "date",
-    "null": false
+    "null": false,
+    "identificador": 3
   }
 }

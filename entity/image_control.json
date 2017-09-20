@@ -1,28 +1,35 @@
 {
   "id": {
-    "type": "pri"
+    "type": "pri",
+    "identificador": 0
   },
   "gallery": {
     "type": "extend",
     "table": "gallery",
-    "null": false
+    "null": false,
+    "identificador": 1
   },
   "table_id": {
     "type": "int",
-    "null": false
+    "null": false,
+    "identificador": 2
   },
   "table": {
     "type": "text",
     "size": 64,
-    "null": false
+    "null": false,
+    "identificador": 3
   },
   "horizontal": {
-    "type": "on"
+    "type": "on",
+    "identificador": 4
   },
   "vertical": {
-    "type": "on"
+    "type": "on",
+    "identificador": 5
   },
   "rotate": {
-    "type": "on"
+    "type": "on",
+    "identificador": 6
   }
 }

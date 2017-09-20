@@ -1,33 +1,40 @@
 {
   "id": {
-    "type": "pri"
+    "type": "pri",
+    "identificador": 0
   },
   "expire": {
     "type": "date",
     "null": false,
-    "list": true
+    "list": true,
+    "identificador": 1
   },
   "token": {
     "type": "text",
     "size": 127,
-    "null": false
+    "null": false,
+    "identificador": 2
   },
   "email": {
     "type": "email",
     "null": false,
-    "list": true
+    "list": true,
+    "identificador": 3
   },
   "password": {
     "type": "password",
-    "null": false
+    "null": false,
+    "identificador": 4
   },
   "status": {
     "type": "status",
     "default": 1,
-    "list": true
+    "list": true,
+    "identificador": 5
   },
   "restore_code": {
     "type": "text",
-    "size": 127
+    "size": 127,
+    "identificador": 6
   }
 }

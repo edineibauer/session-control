@@ -1,27 +1,32 @@
 {
   "id": {
-    "type": "pri"
+    "type": "pri",
+    "identificador": 0
   },
   "imagem": {
     "type": "list",
     "table": "gallery",
     "list": true,
     "tag": "image",
-    "author": true
+    "author": true,
+    "identificador": 1
   },
   "nome": {
-    "type": "title"
+    "type": "title",
+    "identificador": 2
   },
   "urlname": {
     "type": "link",
-    "edit": false
+    "edit": false,
+    "identificador": 3
   },
   "data_registro": {
     "type": "date",
     "null": false,
     "update": false,
     "list": true,
-    "edit": false
+    "edit": false,
+    "identificador": 4
   },
   "level": {
     "type": "select",
@@ -42,11 +47,13 @@
       "3": "analista",
       "4": "gerente",
       "5": "administrador"
-    }
+    },
+    "identificador": 5
   },
   "token": {
     "type": "extend",
     "table": "user_token",
-    "edit": false
+    "edit": false,
+    "identificador": 6
   }
 }

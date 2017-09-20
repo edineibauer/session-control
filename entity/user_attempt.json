@@ -1,22 +1,27 @@
 {
   "id": {
-    "type": "pri"
+    "type": "pri",
+    "identificador": 0
   },
   "data": {
     "type": "datetime",
-    "null": false
+    "null": false,
+    "identificador": 1
   },
   "ip": {
     "type": "text",
     "size": 32,
-    "null": false
+    "null": false,
+    "identificador": 2
   },
   "email": {
     "type": "email",
-    "null": false
+    "null": false,
+    "identificador": 3
   },
   "password": {
     "type": "password",
-    "null": true
+    "null": true,
+    "identificador": 4
   }
 }
