@@ -1,10 +1,6 @@
 var loginFree = true;
 var logoutFree = true;
 
-function toast(mensagem, tipo, tempo, position) {
-    $("body").panel(themeNotify(mensagem, tipo, tempo, position));
-}
-
 function login() {
     if (loginFree) {
         $("#login-card").loading();
@@ -20,7 +16,6 @@ function login() {
             if(g) {
                 toast(g, "warning", 3000);
             } else {
-                $("#login-card").loading();
                 toast("Logando...", 2000);
 
                 setTimeout(function () {

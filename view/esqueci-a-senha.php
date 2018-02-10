@@ -1,9 +1,9 @@
-<div class='row font-size12' style="max-width: 450px; margin: auto">
+<div class='row font-large' style="max-width: 450px; margin: auto">
     <div class="clear"><br><br><br></div>
-    <div class='container center upper panel font-light color-text-grey'>Recuperação de Senha</div>
+    <div class='container align-center upper panel font-light color-text-grey'>Recuperação de Senha</div>
     <div class="row z-depth-2 color-white">
         <div class="panel">
-                <label class="font-size07" for="recovery-email">Digite seu Email</label>
+                <label class="font-small" for="recovery-email">Digite seu Email</label>
                 <input id="recovery-email" type="email">
         </div>
     </div>
@@ -14,7 +14,7 @@
     </div>
 
     <div class="row clear"><br></div>
-    <div class="row upper color-text-grey font-size09">
+    <div class="row upper color-text-grey font-small">
         <a href="<?= defined('HOME') ? HOME : "" ?>login"
            class="left btn color-white color-text-grey hover-opacity-off opacity" style="text-decoration: none">
             fazer login
