@@ -1,28 +1,20 @@
 {
   "title": "Cadastro de Novo Usuário",
   "type": "page",
-  "libraries": {
-    "js": [
-      "jquery",
-      "materialize",
-      "materialize-form"
-    ],
-    "css": [
-      "materialize",
-      "materialize-form",
-      "conn-font",
-      "conn-helper"
-    ],
-    "font": [
-      "roboto"
-    ],
-    "icon": [
-      "materialize"
-    ]
-  },
-  "dependencies": {
-    "css": [
-      "login"
-    ]
-  }
+  "js": [
+    "jquery",
+    "boot"
+  ],
+  "css": [
+    "w3",
+    "color",
+    "font",
+    "helper"
+  ],
+  "font": [
+    "roboto"
+  ],
+  "icon": [
+    "materialize"
+  ]
 }

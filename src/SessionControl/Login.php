@@ -1,32 +1,53 @@
 <?php
 
-/**
- * Login.class [ MODEL ]
- * Responável por autenticar, validar, e checar usuário do sistema de login!
- *
- * @copyright (c) 2017, Edinei J. Bauer
- */
-
 namespace SessionControl;
 
 use \ConnCrud\Read;
 use \ConnCrud\TableCrud;
+use ConnCrud\Update;
 use Helpers\Check;
 use Helpers\Helper;
+use \ReCaptcha\ReCaptcha;
 
-class Login extends StartSession
+class Login
 {
     private $email;
     private $senha;
     private $recaptcha;
     private $attempts = 0;
+    private $result;
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = null)
+    {
+        if ($data) {
+            if (isset($data['email']) && !empty($data['email']))
+                $this->setEmail($data['email']);
+            if (isset($data['password']) && !empty($data['password']))
+                $this->setSenha($data['password']);
+            if (isset($data['recaptcha']) && !empty($data['recaptcha']))
+                $this->setRecaptcha($data['recaptcha']);
+        }
+    }
+
+    /**
+     * @param mixed $result
+     */
+    public function setResult($result)
+    {
+        $this->result = $result;
+    }
 
     /**
      * @param string $email
      */
     public function setEmail($email)
     {
-        $this->email = (string)strip_tags(trim($email));
+        if (!empty($email))
+            $this->email = (string)strip_tags(trim($email));
+        $this->start();
     }
 
     /**
@@ -34,7 +55,9 @@ class Login extends StartSession
      */
     public function setSenha($senha)
     {
-        $this->senha = (string)$this->encrypt(strip_tags(trim($senha)));
+        if (!empty($senha))
+            $this->senha = (string)Check::password(trim($senha));
+        $this->start();
     }
 
     /**
@@ -43,130 +66,108 @@ class Login extends StartSession
     public function setRecaptcha($recaptcha)
     {
         $this->recaptcha = $recaptcha;
+        $this->start();
     }
 
     /**
      * @return mixed
      */
-    public function getAttempts()
+    public function getResult()
     {
-        return $this->attempts;
+        return $this->result;
     }
 
-    public function checkAttemptsExceded()
+    public function logOut()
     {
-        $ip = filter_var(Helper::getIP(), FILTER_VALIDATE_IP);
-        $read = new Read();
-        $read->exeRead(PRE . "user_attempt", "WHERE data > DATE_SUB(NOW(), INTERVAL 15 MINUTE) && ip = :ip", "ip={$ip}");
-        if ($read->getResult() && $read->getRowCount() > 3) {
-            return true;
+        if (LOGGED && isset($_SESSION['userlogin']['token'])) {
+            $token = new TableCrud(PRE . "login");
+            $token->load("token", $_SESSION['userlogin']['token']);
+            if ($token->exist()) {
+                $token->setDados(["token" => null, "token_expira" => null]);
+                $token->save();
+            }
+
+            setcookie("token", 0, time() - 1, "/");
+            unset($_SESSION['userlogin']);
+
+            header("Location: " . HOME . "dashboard");
         }
-
-        return false;
     }
 
-    public function checkMaxAttemptsExceded()
+    private function start()
+    {
+        if ($this->email && $this->senha && !$this->attemptExceded()) {
+            if (LOGGED)
+                $this->setResult('Você já esta logado.');
+            elseif ($this->isHuman())
+                $this->checkUserInfo();
+
+        } elseif ($this->email && $this->senha) {
+            $cont = 10 - $this->attempts;
+            $this->setResult($cont > 0 ? "{$cont} tentativas faltantes" : " bloqueado por 15 minutos");
+        }
+    }
+
+    /**
+     * Vetifica usuário e senha no banco de dados!
+     */
+    private function checkUserInfo()
+    {
+        $read = new Read();
+        $read->exeRead(PRE . "login", "WHERE (email = :email || nome_usuario = :email) && password = :pass", "email={$this->email}&pass={$this->senha}");
+
+        if ($read->getResult() && $read->getResult()[0]['status'] === '1' && !$this->getResult()) {
+            $_SESSION['userlogin'] = $read->getResult()[0];
+            $up = new Update();
+            $up->exeUpdate(PRE . "login", ['token' => $this->getToken(), "token_expira" => date("Y-m-d H:i:s"), "token_recovery" => null],"WHERE (email = :email || nome_usuario = :email) && password = :pass", "email={$this->email}&pass={$this->senha}");
+            $this->setCookie($_SESSION['userlogin']['token']);
+        } else {
+            if ($read->getResult())
+                $this->setResult('Usuário Desativado!');
+            else
+                $this->setResult('Login Inválido!');
+
+            $attempt = new TableCrud("login_attempt");
+            $attempt->loadArray(array("ip" => filter_var(Helper::getIP(), FILTER_VALIDATE_IP), "data" => date("Y-m-d H:i:s"), "username" => $this->email));
+            $attempt->save();
+        }
+    }
+
+    private function attemptExceded()
     {
         $ip = filter_var(Helper::getIP(), FILTER_VALIDATE_IP);
         $read = new Read();
-        $read->exeRead(PRE . "user_attempt", "WHERE data > DATE_SUB(NOW(), INTERVAL 15 MINUTE) && ip = '{$ip}' && email = '{$this->email}'");
+        $read->exeRead(PRE . "login_attempt", "WHERE data > DATE_SUB(NOW(), INTERVAL 15 MINUTE) && ip = '{$ip}' && email = '{$this->email}'");
         $this->attempts = $read->getRowCount();
 
         return ($this->attempts > 10); // maximo de 10 tentativas por IP e email iguais em um intervalo de 15 minutos
     }
 
-    public function logOut()
+    private function isHuman()
     {
-        if(!VISITANTE && isset($_SESSION['userlogin']['token'])) {
-            $token = new TableCrud("user_token");
-            $token->load($_SESSION['userlogin']['token']);
-            if ($token->exist()) {
-                $token->token = "";
-                $token->expire = "";
-                $token->save();
-                $this->setResult("Desconectado, redirecionando...");
-            }
+        if (defined("RECAPTCHA") && $this->attempts < 6) {
+            if (empty($this->recaptcha))
+                $this->setResult("resolva o captcha");
 
-            setcookie("token", 0, time() - 1, "/");
-            unset($_SESSION['userlogin']);
+            $recaptcha = new ReCaptcha(RECAPTCHA);
+            $resp = $recaptcha->verify($this->recaptcha, filter_var(Helper::getIP(), FILTER_VALIDATE_IP));
+            if (!$resp->isSuccess())
+                $this->setResult('<p>' . implode('</p><p>', $resp->getErrorCodes()) . '</p>');
         }
+
+        return $this->getResult() ? false : true;
+    }
+
+    private function setCookie($token)
+    {
+        setcookie("token", $token, time() + (86400 * 30 * 2), "/"); // 2 meses de cookie
     }
 
     /**
-     * <b>Efetuar Login:</b> Envelope um array atribuitivo com índices STRING user [email], STRING pass.
-     * Ao passar este array na ExeLogin() os dados são verificados e o login é feito!
-     * @param $data = user [email], pass
+     * @return string
      */
-    public function exeLogin(array $data = null)
+    private function getToken()
     {
-        if (isset($data['email']) && isset($data['password'])) {
-            $this->setEmail($data['email']);
-            $this->setSenha($data['password']);
-            if(isset($data['recaptcha']) && !empty($data['recaptcha'])) {
-                $this->setRecaptcha($data['recaptcha']);
-            }
-        }
-        $this->setLogin();
-    }
-
-    private function setLogin()
-    {
-        if (!$this->email || !$this->senha) {
-            $this->setError('Email e Senha são necessários para efetuar o login!');
-        } elseif (!Check::email($this->email)) {
-            $this->setError('Formato de Email inválido!');
-        } elseif (!VISITANTE) {
-            $this->setError('Você já esta logado atualmente.');
-        } else {
-            $this->checkUserInfo();
-        }
-    }
-
-    //Vetifica usuário e senha no banco de dados!
-    private function checkUserInfo()
-    {
-        if ($this->isHuman()) {
-            $token = new TableCrud($this->getTable());
-            $token->loadArray(array("email" => $this->email, "password" => $this->senha));
-            if ($token->exist()) {
-                if ($token->status === 0) {
-                    $this->setError('usuário desativado!');
-                } else {
-
-                    $this->sessionStartLogin($token->id);
-                    $this->updateExpire($token->id);
-
-                }
-            } else {
-                $this->setError('usuário inválido!');
-            }
-        }
-    }
-
-    private function isHuman()
-    {
-        if (defined("RECAPTCHA") && $this->checkAttemptsExceded()) {
-            if(empty($this->recaptcha)) {
-                $this->setError("resolva o captcha");
-                return false;
-            }
-
-            $recaptcha = new \ReCaptcha\ReCaptcha(RECAPTCHA);
-            $resp = $recaptcha->verify($this->recaptcha, filter_var(Helper::getIP(), FILTER_VALIDATE_IP));
-            if (!$resp->isSuccess()) {
-                $this->setError('<p>' . implode('</p><p>', $resp->getErrorCodes()) . '</p>');
-                return false;
-            }
-        }
-
-        return true;
-    }
-
-    private function encrypt($senha)
-    {
-        $senha = md5("Control" . trim($senha) . "Session");
-        $key1 = array('1', 'c', 's', '2', 'r', 'o', 'n', 'l', 'f', 'x', '0', 'k', 'v', '5', 'y');
-        $key2 = array('b', '4', '9', '6', 'w', 'a', 'd', '3', 'z', '7', 'j', 'm', '8', 'h', 't');
-        return md5(str_replace($key1, $key2, $senha));
+        return md5("tokes" . rand(9999, 99999) . md5(base64_encode(date("Y-m-d H:i:s"))) . rand(0, 9999));
     }
 }

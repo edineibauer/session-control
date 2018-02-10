@@ -2,27 +2,20 @@
   "title": "Esqueci a Senha",
   "subtitle": "restauração da senha",
   "type": "page",
-  "libraries": {
-    "js": [
-      "jquery",
-      "materialize",
-      "conn"
-    ],
-    "css": [
-      "materialize",
-      "conn-font",
-      "conn-helper"
-    ],
-    "font": [
-      "roboto"
-    ]
-  },
-  "dependencies": {
-    "js": [
-      "login"
-    ],
-    "css": [
-      "login"
-    ]
-  }
+  "js": [
+    "jquery",
+    "boot",
+    "panel",
+    "resizeSensor"
+  ],
+  "css": [
+    "w3",
+    "color",
+    "font",
+    "helper",
+    "panel"
+  ],
+  "font": [
+    "roboto"
+  ]
 }

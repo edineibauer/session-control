@@ -1,23 +1,24 @@
-<div class='container row pd-content60'>
-    <div class="card container col l6 m10 s12 push-m1 push-l3 center-align pd-content30">
-        <div class="row">
-            <div class="input-field container">
-                <input id="recovery-email" onkeyup="triggerButton('send-email-recover', event)" type="email"
-                       class="validate">
-                <label for="emaillog">Digite seu Email</label>
-            </div>
-        </div>
-        <div class="container pd-medium al-center" style="float:initial">
-            <button class="waves-effect waves-light btn" id="send-email-recover" onclick="recoveryEmail();">
-                Enviar Email de Recuperação
-            </button>
+<div class='row font-size12' style="max-width: 450px; margin: auto">
+    <div class="clear"><br><br><br></div>
+    <div class='container center upper panel font-light color-text-grey'>Recuperação de Senha</div>
+    <div class="row z-depth-2 color-white">
+        <div class="panel">
+                <label class="font-size07" for="recovery-email">Digite seu Email</label>
+                <input id="recovery-email" type="email">
         </div>
     </div>
-
-    <div class="row clearfix"></div>
-
-    <div class="container col l6 m10 s12 push-m1 push-l3 al-right">
-        <a href="<?= defined('HOME') ? HOME : "" ?>login" class="grey-text upper">voltar para
-            tela de login</a>
+    <div class="card" style="margin-top: 3px;">
+        <button class="col btn-large color-blue opacity hover-shadow" id="send-email-recover" style="float:initial!important;" onclick="recoveryEmail();">
+            Enviar Email de Recuperação
+        </button>
     </div>
+
+    <div class="row clear"><br></div>
+    <div class="row upper color-text-grey font-size09">
+        <a href="<?= defined('HOME') ? HOME : "" ?>login"
+           class="left btn color-white color-text-grey hover-opacity-off opacity" style="text-decoration: none">
+            fazer login
+        </a>
+    </div>
+    <div class="row clear"><br><br><br><br></div>
 </div>

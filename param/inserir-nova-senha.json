@@ -2,27 +2,17 @@
   "title": "Digite sua Nova senha",
   "subtitle": "restauração da senha",
   "type": "page",
-  "libraries": {
-    "js": [
-      "jquery",
-      "materialize",
-      "conn"
-    ],
-    "css": [
-      "materialize",
-      "conn-font",
-      "conn-helper"
-    ],
-    "font": [
-      "roboto"
-    ]
-  },
-  "dependencies": {
-    "js": [
-      "login"
-    ],
-    "css": [
-      "login"
-    ]
-  }
+  "js": [
+    "jquery",
+    "boot"
+  ],
+  "css": [
+    "w3",
+    "color",
+    "font",
+    "helper"
+  ],
+  "font": [
+    "roboto"
+  ]
 }

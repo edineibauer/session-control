@@ -1,20 +1,29 @@
-<div class='container row pd-content60'>
-
-    <div class='container center font-size13 grey-text upper'>Cadastro de novo Usuário</div>
-
-    <div class="card col l8 m10 s12 push-m1 push-l2 center-align pd-content30">
-        <div class="col s10 push-s1">
-            <?php
-            $form = new \FormCrud\Form("user");
-            $form->showForm("materialize");
-            ?>
+<div class='row font-size12' style="max-width: 750px; margin: auto">
+    <div class="clear"><br></div>
+    <div class='container center upper panel font-light color-text-grey'>Cadastro de Usuário</div><br>
+    <div class="row z-depth-2 color-white">
+        <div class="panel">
+            <div class="panel">
+                <?php
+                $form = new \FormCrud\Form("login");
+                $form->showForm();
+                ?>
+                <div class="center">
+                <a href="<?= defined('HOME') ? HOME : "" ?>cadastro-usuario"
+                   class="left btn-large color-green hover-shadow opacity" style="text-decoration: none; float:initial!important;">
+                    cadastrar outro
+                </a>
+                </div>
+            </div>
         </div>
     </div>
 
-    <div class="row clearfix"></div>
-
-    <div class="container col l6 m10 s12 push-m1 push-l3 al-right">
-        <a href="<?= defined('HOME') ? HOME : "" ?>login" class="grey-text upper">ir para
-            tela de login</a>
+    <div class="row clear"><br></div>
+    <div class="row upper color-text-grey font-size09">
+        <a href="<?= defined('HOME') ? HOME : "" ?>login"
+           class="left btn color-white color-text-grey hover-opacity-off opacity" style="text-decoration: none">
+            fazer login
+        </a>
     </div>
+    <div class="row clear"><br><br><br><br></div>
 </div>

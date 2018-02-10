@@ -1,5 +1,5 @@
 <?php
-if(!defined("VISITANTE") && defined("PATH_HOME")) {
+if (!defined("VISITANTE") && defined("PATH_HOME")) {
 
     $conf = "\n\n\$session = new \SessionControl\Session();
 \$session->setLevelAccess(1, \"usuário\", \"user\",\"usuário do site, acesso a recursos e consumidor de produtos.\");
@@ -17,46 +17,55 @@ if(!defined("VISITANTE") && defined("PATH_HOME")) {
 if (VISITANTE) {
     $log = new \SessionControl\Login();
     ?>
-    <div class='container row pd-content60'>
-        <div class='container al-center font-size13 grey-text upper'>área restrita</div>
-        <div class="card container col l6 m10 s12 push-m1 push-l3 center-align pd-content30">
-            <div class="row">
-                <div class="input-field container">
-                    <input id="emaillog" onkeyup="triggerButton('loginbtn', event)" type="email" class="validate">
-                    <label for="emaillog">Email</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field container">
-                    <input id="passlog" onkeyup="triggerButton('loginbtn', event)" type="password" class="validate">
-                    <label for="passlog">Senha</label>
-                </div>
-            </div>
+    <div class='row font-size13' style="max-width: 450px; margin: auto">
+        <div class="clear"><br><br><br></div>
+        <div class='container center upper panel color-text-grey'>área restrita</div>
+        <div class="row z-depth-2 color-white" id="login-card">
+            <div class="panel">
+                <div class="panel">
+                    <label class="row">
+                        <span>Email</span>
+                        <input id="emaillog" type="email" class="font-light font-size13">
+                    </label>
+                    <label class="row">
+                        <span>Senha</span>
+                        <input id="passlog" type="password" class="font-light font-size13">
+                    </label>
 
-            <?php if (defined("RECAPTCHASITE") && $log->checkAttemptsExceded()) { ?>
-                <div class="container">
-                    <div class="g-recaptcha" data-sitekey="<?= RECAPTCHASITE ?>"></div>
-                    <br>
-                </div>
-                <script type="text/javascript" src="https://www.google.com/recaptcha/api.js"></script>
-            <?php } else { ?>
-            <input type="hidden" id="g-recaptcha-response"/>
-            <?php } ?>
+                    <?php if (defined("RECAPTCHASITE") && $log->checkAttemptsExceded()) { ?>
+                        <div class="container">
+                            <div class="g-recaptcha" data-sitekey="<?= RECAPTCHASITE ?>"></div>
+                            <br>
+                        </div>
+                        <script type="text/javascript" src="https://www.google.com/recaptcha/api.js"></script>
 
-            <div class="container pd-medium al-center" style="float:initial">
-                <a href="<?= defined('HOME') ? HOME : "" ?>cadastro-usuario"
-                   class="waves-effect waves-teal btn-flat color-gray">Cadastre-se</a>
-                <button id="loginbtn" class="waves-effect waves-light btn" onclick="login();">
-                    Entrar
-                </button>
+                    <?php } else { ?>
+
+                    <input type="hidden" id="g-recaptcha-response"/>
+                    <?php } ?>
+                </div>
             </div>
         </div>
+        <div class="row clearfix" style="padding: 2px"></div>
 
-        <div class="row clearfix"></div>
+        <div class="row card">
+            <button id="loginbtn" class="col upper btn-large color-blue hover-opacity-off opacity" onclick="login();">
+                Entrar
+            </button>
+        </div>
 
-        <div class="container col l6 m10 s12 push-m1 push-l3 al-right">
+        <div class="row clearfix"><br></div>
+
+        <div class="row upper color-text-grey font-size07">
+            <a href="<?= defined('HOME') ? HOME : "" ?>cadastro-usuario"
+               class="left btn color-white color-text-grey hover-opacity-off opacity" style="text-decoration: none">
+                Cadastre-se
+            </a>
             <a href="<?= defined('HOME') ? HOME : "" ?>esqueci-a-senha"
-               class="upper font-size09 teal-text">esqueci a senha</a>
+               class="right btn color-white color-text-grey hover-opacity-off opacity"
+               style="text-decoration: none; margin-right:0">
+                esqueci a senha
+            </a>
         </div>
     </div>
 
