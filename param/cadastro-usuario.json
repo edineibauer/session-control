@@ -1,20 +1,4 @@
 {
   "title": "Cadastro de Novo Usuário",
-  "type": "page",
-  "js": [
-    "jquery",
-    "boot"
-  ],
-  "css": [
-    "w3",
-    "color",
-    "font",
-    "helper"
-  ],
-  "font": [
-    "roboto"
-  ],
-  "icon": [
-    "materialize"
-  ]
+  "type": "page"
 }

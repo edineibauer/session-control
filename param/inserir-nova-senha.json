@@ -1,18 +1,5 @@
 {
   "title": "Digite sua Nova senha",
   "subtitle": "restauração da senha",
-  "type": "page",
-  "js": [
-    "jquery",
-    "boot"
-  ],
-  "css": [
-    "w3",
-    "color",
-    "font",
-    "helper"
-  ],
-  "font": [
-    "roboto"
-  ]
+  "type": "page"
 }

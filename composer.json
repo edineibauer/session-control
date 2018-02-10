@@ -1,24 +1,10 @@
 {
-  "name": "conn/session-control",
-  "description": "Controle de Sessão para login de usuários",
-  "type": "library",
-  "license": "MIT",
-  "authors": [
-    {
-      "name": "Edinei J. Bauer",
-      "email": "edineibauer@gmail.com"
+    "autoload": {
+        "classmap": [
+            "src/SessionControl"
+        ]
+    },
+    "require": {
+        "conn/session-control": "^1.2"
     }
-  ],
-  "require": {
-    "php": "^7.0",
-    "conn/config": "^1",
-    "conn/form-crud": "^1",
-    "conn/email-control": "^1",
-    "google/recaptcha": "~1.1"
-  },
-  "autoload": {
-    "psr-0": {
-      "SessionControl": "src/"
-    }
-  }
 }

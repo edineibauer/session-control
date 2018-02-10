@@ -1,21 +1,5 @@
 {
   "title": "Esqueci a Senha",
   "subtitle": "restauração da senha",
-  "type": "page",
-  "js": [
-    "jquery",
-    "boot",
-    "panel",
-    "resizeSensor"
-  ],
-  "css": [
-    "w3",
-    "color",
-    "font",
-    "helper",
-    "panel"
-  ],
-  "font": [
-    "roboto"
-  ]
+  "type": "page"
 }

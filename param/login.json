@@ -1,24 +1,5 @@
 {
   "title": "Login",
   "subtitle": "faça login para continuar",
-  "type": "page",
-  "js": [
-    "jquery",
-    "boot",
-    "panel",
-    "resizeSensor"
-  ],
-  "css": [
-    "w3",
-    "color",
-    "font",
-    "helper",
-    "panel"
-  ],
-  "font": [
-    "roboto"
-  ],
-  "icon": [
-    "material"
-  ]
+  "type": "page"
 }
