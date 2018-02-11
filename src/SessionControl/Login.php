@@ -120,6 +120,8 @@ class Login
 
         if ($read->getResult() && $read->getResult()[0]['status'] === '1' && !$this->getResult()) {
             $_SESSION['userlogin'] = $read->getResult()[0];
+            $_SESSION['userlogin']['imagem'] = json_decode($_SESSION['userlogin']['imagem'], true)[0]['url'];
+
             $up = new Update();
             $up->exeUpdate(PRE . "login", ['token' => $this->getToken(), "token_expira" => date("Y-m-d H:i:s"), "token_recovery" => null],"WHERE (email = :email || nome_usuario = :email) && password = :pass", "email={$this->email}&pass={$this->senha}");
             $this->setCookie($_SESSION['userlogin']['token']);
