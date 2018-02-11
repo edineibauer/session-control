@@ -6,7 +6,7 @@
             <div class="panel">
                 <?php
                 $form = new \FormCrud\Form("login");
-                $form->showForm(["email", "nome_usuario", "password"]);
+                $form->showForm(["nome", "email", "password"]);
                 ?>
                 <div class="align-center">
                 <a href="<?= defined('HOME') ? HOME : "" ?>cadastro-usuario"
