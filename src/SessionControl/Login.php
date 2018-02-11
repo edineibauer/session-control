@@ -79,16 +79,18 @@ class Login
 
     public function logOut()
     {
-        if (LOGGED && isset($_SESSION['userlogin']['token'])) {
-            $token = new TableCrud(PRE . "login");
-            $token->load("token", $_SESSION['userlogin']['token']);
-            if ($token->exist()) {
-                $token->setDados(["token" => null, "token_expira" => null]);
-                $token->save();
+        if (isset($_SESSION['userlogin'])) {
+            if(isset($_SESSION['userlogin']['token']) && !empty($_SESSION['userlogin']['token'])) {
+                $token = new TableCrud(PRE . "login");
+                $token->load("token", $_SESSION['userlogin']['token']);
+                if ($token->exist()) {
+                    $token->setDados(["token" => null, "token_expira" => null]);
+                    $token->save();
+                }
             }
 
-            setcookie("token", 0, time() - 1, "/");
             unset($_SESSION['userlogin']);
+            setcookie("token", 0, time() - 1, "/");
 
             header("Location: " . HOME . "dashboard");
         }
