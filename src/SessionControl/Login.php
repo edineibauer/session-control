@@ -79,6 +79,7 @@ class Login
 
     public function logOut()
     {
+        setcookie("token", 0, time() - 1, "/");
         if (isset($_SESSION['userlogin'])) {
             if(isset($_SESSION['userlogin']['token']) && !empty($_SESSION['userlogin']['token'])) {
                 $token = new TableCrud(PRE . "login");
@@ -90,7 +91,6 @@ class Login
             }
 
             unset($_SESSION['userlogin']);
-            setcookie("token", 0, time() - 1, "/");
 
             header("Location: " . HOME . "dashboard");
         }
