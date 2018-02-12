@@ -29,8 +29,6 @@ $id = \Entity\Entity::add("login", ["nome" => "Admin", "nome_usuario" => "admin"
             $("#btn-login").prop("disabled", false).removeAttr("disabled");
     });
     function loginArea() {
-        post('config', 'configFinish', {lib:"session-control"}, function () {
-
-        });
+        post('config', 'configFinish', {lib:"session-control"}, function () {});
     }
 </script>
