@@ -1,5 +1,4 @@
 var loginFree = true;
-var logoutFree = true;
 
 function login() {
     if (loginFree) {
@@ -25,28 +24,5 @@ function login() {
             loginFree = true;
         });
 
-    }
-}
-
-function logout() {
-    if (logoutFree) {
-        logoutFree = false;
-
-        $.post(HOME + 'request/post', {lib: 'session-control', file: 'logout'}, function (g) {
-            g = JSON.parse(g);
-            if (g['status'] === "1") {
-                Materialize.toast(g['mensagem'], 2000);
-                setTimeout(function () {
-                    window.location.href = HOME;
-                }, 2000);
-
-            } else if (g['status'] === "2") {
-                Materialize.toast(g['mensagem'], 3000);
-            } else {
-                Materialize.toast("Erro Desconhecido", 3000);
-                console.log(g);
-            }
-            logoutFree = true;
-        });
     }
 }
