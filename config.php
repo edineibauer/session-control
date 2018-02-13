@@ -52,8 +52,9 @@ else
         });
 
         $("#btn-login").on("click", function () {
-            post('config', 'configFinish', {local: "session-control"}, function () {});
+            post('config', 'configFinish', {local: "session-control"}, function () {
+                window.location = HOME + "dashboard";
+            });
         });
     }
-
 </script>
