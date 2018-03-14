@@ -2,10 +2,11 @@
 
 new LinkControl\EntityImport("session-control");
 
+$email = (!defined('EMAIL') ? "contato@ontab.com.br" : EMAIL);
 $read = new \ConnCrud\Read();
 $read->exeRead(PRE . "login", "ORDER BY id ASC LIMIT 1");
 if (!$read->getResult())
-    $id = \Entity\Entity::add("login", ["nome" => "Admin", "nome_usuario" => "admin", "setor" => 1, "email" => EMAIL, "password" => "mudar"]);
+    $id = \Entity\Entity::add("login", ["nome" => "Admin", "nome_usuario" => "admin", "setor" => 1, "email" => $email, "password" => "mudar"]);
 else
     $id = $read->getResult()[0]['id'];
 ?>
@@ -52,8 +53,13 @@ else
         });
 
         $("#btn-login").on("click", function () {
-            post('config', 'configFinish', {local: "session-control"}, function () {
-                window.location = HOME + "dashboard";
+            post('config', 'configFinish', {local: "session-control"}, function (g) {
+                if(g) {
+                    toast("Entrando na Dashboard...", 1600);
+                    setTimeout(function () {
+                        window.location = HOME + "dashboard";
+                    },1700);
+                }
             });
         });
     }

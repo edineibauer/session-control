@@ -26,3 +26,8 @@ function login() {
 
     }
 }
+
+$("#emaillog, #passlog").on("keyup", function (e) {
+    if(e.which === 13)
+        login();
+});
