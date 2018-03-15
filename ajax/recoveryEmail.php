@@ -13,7 +13,7 @@ if ($email) {
 
         $send = new \EmailControl\Email();
         $send->setAssunto("Recuperação de Senha " . SITENAME);
-        $send->setTemplate("password", array("restore_code" => $code));
+        $send->setTemplate("password", $user->getDados());
         $send->enviar($email);
 
         $data['data'] = true;
