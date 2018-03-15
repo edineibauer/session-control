@@ -14,5 +14,5 @@ if ($banco->exist()) {
     $banco->password = Check::password($senha);
     $banco->save();
 
-    $data['data'] = 1;
+    $data['data'] = "1";
 }
