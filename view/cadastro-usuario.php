@@ -6,14 +6,10 @@
             <div class="panel">
                 <?php
                 $form = new \FormCrud\Form("login");
+                $form->setAutoSave(false);
+                $form->setCallback("goToDashboard");
                 $form->showForm(["nome", "email", "password"]);
                 ?>
-                <div class="align-center">
-                <a href="<?= defined('HOME') ? HOME : "" ?>cadastro-usuario"
-                   class="left btn-large color-green hover-shadow opacity" style="text-decoration: none; float:initial!important;">
-                    cadastrar outro
-                </a>
-                </div>
             </div>
         </div>
     </div>
