@@ -23,12 +23,12 @@ class Login
     public function __construct($data = null)
     {
         if ($data) {
+            if (isset($data['recaptcha']) && !empty($data['recaptcha']))
+                $this->setRecaptcha($data['recaptcha']);
             if (isset($data['email']) && !empty($data['email']))
                 $this->setEmail($data['email']);
             if (isset($data['password']) && !empty($data['password']))
                 $this->setSenha($data['password']);
-            if (isset($data['recaptcha']) && !empty($data['recaptcha']))
-                $this->setRecaptcha($data['recaptcha']);
         }
     }
 
