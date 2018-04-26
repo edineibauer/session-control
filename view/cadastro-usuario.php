@@ -5,7 +5,7 @@
         <div class="panel">
             <div class="panel">
                 <?php
-                $form = new \FormCrud\Form("login");
+                $form = new \FormCrud\Form("usuarios");
                 $form->setAutoSave(false);
                 $form->setCallback("goToDashboard");
                 $form->showForm(["nome", "email", "password"]);

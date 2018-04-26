@@ -4,7 +4,7 @@ use \ConnCrud\TableCrud;
 $email = trim(filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL));
 
 if ($email) {
-    $user = new TableCrud(PRE . "login");
+    $user = new TableCrud(PRE . "usuarios");
     $user->load("email", $email);
     if ($user->exist()) {
         $code = md5(base64_encode(date('Y-m-d H:i:s') . "recovery-pass"));

@@ -5,7 +5,7 @@ use Helpers\Check;
 $senha = strip_tags(trim(filter_input(INPUT_POST, 'senha', FILTER_DEFAULT)));
 $restoreCode = filter_input(INPUT_POST, 'code', FILTER_DEFAULT);
 
-$banco = new TableCrud("login");
+$banco = new TableCrud("usuarios");
 $banco->load("token_recovery", $restoreCode);
 if ($banco->exist()) {
     $banco->token_recovery = "";
