@@ -3,6 +3,8 @@
     "description": "Controle de Sessão para login de usuários",
     "type": "library",
     "license": "MIT",
+    "prefer-stable" : true,
+    "minimum-stability": "dev",
     "authors": [
         {
             "name": "Edinei J. Bauer",
