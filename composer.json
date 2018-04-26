@@ -11,8 +11,8 @@
     ],
     "require": {
         "php": "^7.0",
-        "conn/form-crud": "^1",
-        "conn/email-control": "^1",
+        "conn/form-crud": "dev-master",
+        "conn/email-control": "dev-master",
         "google/recaptcha": "~1.1"
     },
     "autoload": {
