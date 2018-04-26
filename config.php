@@ -1,5 +1,5 @@
 <?php
-new LinkControl\EntityImport("session-control");
+new EntityForm\EntityImport("session-control");
 
 $email = (!defined('EMAIL') ? "contato@ontab.com.br" : EMAIL);
 $read = new \ConnCrud\Read();
