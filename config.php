@@ -4,10 +4,9 @@ new EntityForm\EntityImport("session-control");
 $email = (!defined('EMAIL') ? "contato@ontab.com.br" : EMAIL);
 $read = new \ConnCrud\Read();
 $read->exeRead(PRE . "usuarios", "ORDER BY id ASC LIMIT 1");
-if (!$read->getResult())
+if (!$read->getResult()) {
     $id = \Entity\Entity::add("usuarios", ["nome" => "Admin", "nome_usuario" => "admin", "setor" => 1, "email" => $email, "password" => "mudar"]);
-else
-    $id = $read->getResult()[0]['id'];
+}
 ?>
 <style>body {
         background: #eeeeee;
@@ -22,18 +21,17 @@ else
 
             <div class="card color-grey-light color-grey align-center">
                 <div class="font-medium padding-8 upper font-bold color-red">Atenção!</div>
-                <p class="padding-medium font-light">Atualize as informações de Administrador! Atualmente senha é: "<b>mudar</b>"
-                </p>
+                <p class="padding-medium font-light">usuário: "<b>admin</b>"</p>
+                <p class="padding-medium font-light">senha: "<b>mudar</b>"</p>
+                <br>
+                <p class="padding-medium font-light">clique no botão abaixo para ir a tela de login e depois utilize as credenciais acima.</p>
+                <br>
+                <p class="padding-medium font-light">Não esqueça de atualizar seu perfil!</p>
             </div>
 
-            <?php
-            $form = new \FormCrud\Form("usuarios");
-            $form->showForm($id, ["nome", "nome_usuario", "email", "imagem", "password"]);
-            ?>
-
-            <button class="waves-effect waves-light btn-large" id="btn-login" disabled="disabled">
-                <i class="material-icons left padding-right">save</i><span class="left">Atualizar e fazer Login</span>
-            </button>
+            <a href="<?=HOME?>dashboard" class="waves-effect waves-light color-teal btn-large">
+                <i class="material-icons left padding-right">people</i><span class="left">Fazer Login</span>
+            </a>
         </div>
     </div>
 </div>
@@ -53,11 +51,11 @@ else
 
         $("#btn-login").on("click", function () {
             post('config', 'configFinish', {local: "session-control"}, function (g) {
-                if(g) {
+                if (g) {
                     toast("Entrando na Dashboard...", 1600);
                     setTimeout(function () {
                         window.location = HOME + "dashboard";
-                    },1700);
+                    }, 1700);
                 }
             });
         });
