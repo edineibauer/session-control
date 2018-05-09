@@ -11,7 +11,7 @@ if ($email) {
         $user->setDados(['token' => null, 'token_recovery' => $code, "token_expira" => date('Y-m-d H:i:s')]);
         $user->save();
 
-        $send = new \EmailControl\Email();
+        $send = new \EmailControl\EmailSparkPost();
         $send->setAssunto("Recuperação de Senha " . SITENAME);
         $send->setTemplate("password", $user->getDados());
         $send->enviar($email);
