@@ -1,12 +1,5 @@
 <?php
-new EntityForm\EntityImport("session-control");
-
-$email = (!defined('EMAIL') ? "contato@ontab.com.br" : EMAIL);
-$read = new \ConnCrud\Read();
-$read->exeRead(PRE . "usuarios", "ORDER BY id ASC LIMIT 1");
-if (!$read->getResult()) {
-    $id = \Entity\Entity::add("usuarios", ["nome" => "Admin", "nome_usuario" => "admin", "setor" => 1, "email" => $email, "password" => "mudar"]);
-}
+include_once PATH_HOME . 'vendor/conn/dashboard/view/inc/version_control.php';
 ?>
 <style>body {
         background: #eeeeee;
