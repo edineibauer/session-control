@@ -91,8 +91,6 @@ class Login
             }
 
             unset($_SESSION['userlogin']);
-
-            header("Location: " . HOME . "dashboard");
         }
     }
 
