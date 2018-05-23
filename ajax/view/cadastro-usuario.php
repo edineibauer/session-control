@@ -29,5 +29,6 @@ ob_start();
     </div>
 
 <?php
+$data['data']['title'] = "Cadastro de Novo Usuário";
 $data['data']['content'] = ob_get_contents();
 ob_end_clean();

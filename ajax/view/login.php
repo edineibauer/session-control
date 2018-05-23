@@ -57,6 +57,7 @@ if (LOGGED) {
         </div>
     </div>
     <?php
+    $data['data']['title'] = "Login | " . SITENAME;
     $data['data']['content'] = ob_get_contents();
     ob_end_clean();
 }
