@@ -38,6 +38,6 @@ if (empty($code) || strlen($code) < 10) {
         <div class="row clear"><br><br><br><br></div>
     </div>
     <?php
-    $data['data'] = ob_get_contents();
+    $data['data']['content'] = ob_get_contents();
     ob_end_clean();
 }

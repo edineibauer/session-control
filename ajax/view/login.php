@@ -57,6 +57,6 @@ if (LOGGED) {
         </div>
     </div>
     <?php
-    $data['data'] = ob_get_contents();
+    $data['data']['content'] = ob_get_contents();
     ob_end_clean();
 }
