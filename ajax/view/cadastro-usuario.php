@@ -12,7 +12,8 @@ ob_start();
                     $form = new \FormCrud\Form("usuarios");
                     $form->setAutoSave(false);
                     $form->setCallback("goToDashboard");
-                    $form->showForm(["nome", "email", "password"]);
+                    $form->setFields(["nome", "email", "password"]);
+                    $form->showForm();
                     ?>
                 </div>
             </div>
