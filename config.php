@@ -1,5 +1,6 @@
 <?php
-include_once PATH_HOME . 'vendor/conn/dashboard/view/inc/version_control.php';
+ob_start();
+include_once PATH_HOME . 'vendor/conn/dashboard/ajax/view/inc/version_control.php';
 ?>
 <style>body {
         background: #eeeeee;
@@ -43,7 +44,7 @@ include_once PATH_HOME . 'vendor/conn/dashboard/view/inc/version_control.php';
         });
 
         $("#btn-login").on("click", function () {
-            post('config', 'configFinish', {local: "session-control"}, function (g) {
+            post('config', 'inc/configFinish', {local: "session-control"}, function (g) {
                 if (g) {
                     toast("Entrando na Dashboard...", 1600);
                     setTimeout(function () {
@@ -54,3 +55,6 @@ include_once PATH_HOME . 'vendor/conn/dashboard/view/inc/version_control.php';
         });
     }
 </script>
+<?php
+$data['data']['content'] = ob_get_contents();
+ob_end_clean();
