@@ -5,6 +5,7 @@ namespace SessionControl;
 use \ConnCrud\Read;
 use \ConnCrud\TableCrud;
 use ConnCrud\Update;
+use EntityForm\Dicionario;
 use Helpers\Check;
 use Helpers\Helper;
 use \ReCaptcha\ReCaptcha;
@@ -113,8 +114,9 @@ class Login
      */
     private function checkUserInfo()
     {
+        $d = new Dicionario("usuarios");
         $read = new Read();
-        $read->exeRead(PRE . "usuarios", "WHERE (email = :email || nome_usuario = :email || nome = :email) && password = :pass", "email={$this->email}&pass={$this->senha}");
+        $read->exeRead(PRE . "usuarios", "WHERE ({$d->search($d->getInfo()['email'])->getColumn()} = :email || {$d->search($d->getInfo()['link'])->getColumn()} = :email || {$d->getRelevant()->getColumn()} = :email) && password = :pass", "email={$this->email}&pass={$this->senha}");
 
         if ($read->getResult() && $read->getResult()[0]['status'] === '1' && !$this->getResult()) {
             $_SESSION['userlogin'] = $read->getResult()[0];
