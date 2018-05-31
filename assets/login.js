@@ -27,7 +27,7 @@ function login() {
     }
 }
 
-$("#emaillog, #passlog").on("keyup", function (e) {
+$("#content").off("keyup", "#emaillog, #passlog").on("keyup", "#emaillog, #passlog", function (e) {
     if(e.which === 13)
         login();
 });
