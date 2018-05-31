@@ -5,8 +5,7 @@ if (LOGGED) {
 } else {
     ob_start();
     ?>
-    <div class='row font-large' style="max-width: 450px; margin: auto">
-        <div class="clear"><br><br><br></div>
+    <div class='row container font-large' style="max-width: 470px; margin: auto">
         <?php
         if (LOGO || FAVICON) {
             ?>
@@ -14,6 +13,8 @@ if (LOGGED) {
                 <img src="<?=HOME . "image/" . (LOGO ? LOGO : FAVICON) . "&h=100"?>" height="60" style="height: 60px;float: initial;margin:initial">
             </div>
             <?php
+        } else {
+            echo '<div class="clear"><br><br><br></div>';
         }
         ?>
         <div class='container align-center upper panel color-text-grey'>área restrita <?= SITENAME ?></div>
@@ -64,6 +65,7 @@ if (LOGGED) {
                 esqueci a senha
             </a>
         </div>
+        <div class="clear"><br><br><br></div>
     </div>
     <?php
     $data['data']['title'] = "Login | " . SITENAME;
