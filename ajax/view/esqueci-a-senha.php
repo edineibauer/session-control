@@ -11,7 +11,7 @@ ob_start();
             </div>
         </div>
         <div class="card" style="margin-top: 3px;">
-            <button class="col btn-large color-blue opacity hover-shadow" id="send-email-recover"
+            <button class="col btn-large theme-d2 hover-opacity-off opacity hover-shadow" id="send-email-recover"
                     style="float:initial!important;" onclick="recoveryEmail();">
                 Enviar Email de Recuperação
             </button>
