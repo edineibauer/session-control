@@ -114,39 +114,43 @@ class Login
      */
     private function checkUserInfo()
     {
-        $d = new Dicionario("usuarios");
-        $emailName = $d->search($d->getInfo()['email'])->getColumn();
-        $linkName = $d->search($d->getInfo()['link'])->getColumn();
-        $nomeName = $d->getRelevant()->getColumn();
-        $read = new Read();
-        $read->exeRead(PRE . "usuarios", "WHERE ({$emailName} = :email || {$linkName} = :email || {$nomeName} = :email) && password = :pass", "email={$this->email}&pass={$this->senha}");
+        if(strlen($this->senha) < 4) {
+            $d = new Dicionario("usuarios");
+            $emailName = $d->search($d->getInfo()['email'])->getColumn();
+            $linkName = $d->search($d->getInfo()['link'])->getColumn();
+            $nomeName = $d->getRelevant()->getColumn();
+            $read = new Read();
+            $read->exeRead(PRE . "usuarios", "WHERE ({$emailName} = :email || {$linkName} = :email || {$nomeName} = :email) && password = :pass", "email={$this->email}&pass={$this->senha}");
 
-        if ($read->getResult() && $read->getResult()[0]['status'] === '1' && !$this->getResult()) {
-            $_SESSION['userlogin'] = $read->getResult()[0];
+            if ($read->getResult() && $read->getResult()[0]['status'] === '1' && !$this->getResult()) {
+                $_SESSION['userlogin'] = $read->getResult()[0];
 
-            if(!isset($_SESSION['userlogin']['nome']))
-                $_SESSION['userlogin']['nome'] = $_SESSION['userlogin'][$nomeName];
+                if (!isset($_SESSION['userlogin']['nome']))
+                    $_SESSION['userlogin']['nome'] = $_SESSION['userlogin'][$nomeName];
 
-            if(!isset($_SESSION['userlogin']['nome_usuario']))
-                $_SESSION['userlogin']['nome_usuario'] = $_SESSION['userlogin'][$linkName];
+                if (!isset($_SESSION['userlogin']['nome_usuario']))
+                    $_SESSION['userlogin']['nome_usuario'] = $_SESSION['userlogin'][$linkName];
 
-            if(!isset($_SESSION['userlogin']['email']))
-                $_SESSION['userlogin']['email'] = $_SESSION['userlogin'][$emailName];
+                if (!isset($_SESSION['userlogin']['email']))
+                    $_SESSION['userlogin']['email'] = $_SESSION['userlogin'][$emailName];
 
-            $_SESSION['userlogin']['imagem'] = json_decode($_SESSION['userlogin']['imagem'], true)[0]['url'];
+                $_SESSION['userlogin']['imagem'] = json_decode($_SESSION['userlogin']['imagem'], true)[0]['url'];
 
-            $up = new Update();
-            $up->exeUpdate(PRE . "usuarios", ['token' => $this->getToken(), "token_expira" => date("Y-m-d H:i:s"), "token_recovery" => null],"WHERE (email = :email || nome_usuario = :email) && password = :pass", "email={$this->email}&pass={$this->senha}");
-            $this->setCookie($_SESSION['userlogin']['token']);
+                $up = new Update();
+                $up->exeUpdate(PRE . "usuarios", ['token' => $this->getToken(), "token_expira" => date("Y-m-d H:i:s"), "token_recovery" => null], "WHERE (email = :email || nome_usuario = :email) && password = :pass", "email={$this->email}&pass={$this->senha}");
+                $this->setCookie($_SESSION['userlogin']['token']);
+            } else {
+                if ($read->getResult())
+                    $this->setResult('Usuário Desativado!');
+                else
+                    $this->setResult('Login Inválido!');
+
+                $attempt = new TableCrud("login_attempt");
+                $attempt->loadArray(array("ip" => filter_var(Helper::getIP(), FILTER_VALIDATE_IP), "data" => date("Y-m-d H:i:s"), "username" => $this->email));
+                $attempt->save();
+            }
         } else {
-            if ($read->getResult())
-                $this->setResult('Usuário Desativado!');
-            else
-                $this->setResult('Login Inválido!');
-
-            $attempt = new TableCrud("login_attempt");
-            $attempt->loadArray(array("ip" => filter_var(Helper::getIP(), FILTER_VALIDATE_IP), "data" => date("Y-m-d H:i:s"), "username" => $this->email));
-            $attempt->save();
+            $this->setResult('Senha muito Curta');
         }
     }
 
