@@ -56,8 +56,11 @@ class Login
      */
     public function setSenha($senha)
     {
-        if (!empty($senha))
+        if (!empty($senha) && strlen($senha) > 3)
             $this->senha = (string)Check::password(trim($senha));
+        else
+            $this->setResult('Senha muito Curta');
+
         $this->start();
     }
 
@@ -114,7 +117,7 @@ class Login
      */
     private function checkUserInfo()
     {
-        if(strlen($this->senha) < 4) {
+        if(!$this->getResult()) {
             $d = new Dicionario("usuarios");
             $emailName = $d->search($d->getInfo()['email'])->getColumn();
             $linkName = $d->search($d->getInfo()['link'])->getColumn();
@@ -149,8 +152,6 @@ class Login
                 $attempt->loadArray(array("ip" => filter_var(Helper::getIP(), FILTER_VALIDATE_IP), "data" => date("Y-m-d H:i:s"), "username" => $this->email));
                 $attempt->save();
             }
-        } else {
-            $this->setResult('Senha muito Curta');
         }
     }
 
