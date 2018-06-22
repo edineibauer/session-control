@@ -94,7 +94,7 @@ class Login
                 }
             }
 
-            unset($_SESSION['userlogin']);
+            session_unset();
         }
     }
 
