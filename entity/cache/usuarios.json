@@ -205,11 +205,13 @@
       "regex": "",
       "values": [
         "1",
-        "2"
+        "2",
+        "20"
       ],
       "names": [
         "Administra\u00e7\u00e3o do Site",
-        "Gerente"
+        "Gerente",
+        "Usuário"
       ],
       "validate": ""
     },
