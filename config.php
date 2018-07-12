@@ -1,5 +1,4 @@
 <?php
-ob_start();
 include_once PATH_HOME . 'vendor/conn/dashboard/ajax/view/inc/version_control.php';
 ?>
 <style>body {
@@ -55,6 +54,3 @@ include_once PATH_HOME . 'vendor/conn/dashboard/ajax/view/inc/version_control.ph
         });
     }
 </script>
-<?php
-$data['data']['content'] = ob_get_contents();
-ob_end_clean();
