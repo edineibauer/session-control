@@ -3,4 +3,5 @@
 $log = new \SessionControl\Login();
 $log->logOut();
 
-$data = HOME . "login";
+$data['response'] = 3;
+$data['data'] = HOME . "login";

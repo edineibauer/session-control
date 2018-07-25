@@ -1,6 +1,7 @@
 <?php
 if (LOGGED) {
-    $data = HOME . "dashboard";
+    $data['response'] = 3;
+    $data['data'] = HOME . "dashboard";
 } else {
     ob_start();
     ?>
@@ -67,6 +68,6 @@ if (LOGGED) {
         <div class="clear"><br><br><br></div>
     </div>
     <?php
-    $data = ob_get_contents();
+    $data['data'] = ob_get_contents();
     ob_end_clean();
 }

@@ -28,5 +28,5 @@ ob_start();
     </div>
 
 <?php
-$data = ob_get_contents();
+$data['data'] = ob_get_contents();
 ob_end_clean();
