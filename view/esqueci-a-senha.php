@@ -28,6 +28,5 @@ ob_start();
     </div>
 
 <?php
-$data['data']['title'] = "Esqueci a Senha";
-$data['data']['content'] = ob_get_contents();
+$data = ob_get_contents();
 ob_end_clean();

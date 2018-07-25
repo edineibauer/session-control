@@ -1,8 +1,7 @@
 <?php
 $code = str_replace('/inserir-nova-senha/', '', $_SERVER[REQUEST_URI]);
 if (empty($code) || strlen($code) < 10) {
-    $data['response'] = 3;
-    $data['data'] = HOME . "esqueci-a-senha";
+    $data = HOME . "esqueci-a-senha";
 } else {
 
     ob_start();
@@ -38,7 +37,6 @@ if (empty($code) || strlen($code) < 10) {
         <div class="row clear"><br><br><br><br></div>
     </div>
     <?php
-    $data['data']['title'] = "Inserir Nova Senha";
-    $data['data']['content'] = ob_get_contents();
+    $data = ob_get_contents();
     ob_end_clean();
 }
