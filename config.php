@@ -1,5 +1,5 @@
 <?php
-include_once PATH_HOME . 'vendor/conn/dashboard/ajax/view/inc/version_control.php';
+include_once PATH_HOME . 'vendor/conn/dashboard/view/inc/version_control.php';
 ?>
 <style>body {
         background: #eeeeee;
