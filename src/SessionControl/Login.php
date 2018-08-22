@@ -120,20 +120,12 @@ class Login
         if(!$this->getResult()) {
             $d = new Dicionario("usuarios");
             $emailName = $d->search($d->getInfo()['email'])->getColumn();
-            $linkName = $d->search($d->getInfo()['link'])->getColumn();
             $password = $d->search($d->getInfo()['password'])->getColumn();
-            $nomeName = $d->getRelevant()->getColumn();
 
             $read = new Read();
-            $read->exeRead(PRE . "usuarios", "WHERE ({$emailName} = :email || {$linkName} = :email || {$nomeName} = :email) && {$password} = :pass", "email={$this->email}&pass={$this->senha}");
+            $read->exeRead(PRE . "usuarios", "WHERE {$emailName} = :email && {$password} = :pass", "email={$this->email}&pass={$this->senha}");
             if ($read->getResult() && $read->getResult()[0]['status'] === '1' && !$this->getResult()) {
                 $_SESSION['userlogin'] = $read->getResult()[0];
-
-                if (!isset($_SESSION['userlogin']['nome']))
-                    $_SESSION['userlogin']['nome'] = $_SESSION['userlogin'][$nomeName];
-
-                if (!isset($_SESSION['userlogin']['nome_usuario']))
-                    $_SESSION['userlogin']['nome_usuario'] = $_SESSION['userlogin'][$linkName];
 
                 if (!isset($_SESSION['userlogin']['email']))
                     $_SESSION['userlogin']['email'] = $_SESSION['userlogin'][$emailName];
