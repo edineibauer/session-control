@@ -1,4 +1,5 @@
 <?php
+
 $code = explode('get/inserir-nova-senha/', $_SERVER['REQUEST_URI'])[1];
 if (empty($code) || strlen($code) < 10) {
     $data['response'] = 3;
