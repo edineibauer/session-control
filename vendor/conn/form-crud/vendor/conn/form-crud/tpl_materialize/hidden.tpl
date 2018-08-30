@@ -1,0 +1,1 @@
+<input type='hidden' value="{$value}" id="formcrud-identificador-entity"  data-model="{$column}" class="{$class}" />

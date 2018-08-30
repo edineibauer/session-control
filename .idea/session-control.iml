@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/clue/stream-filter" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/conn/config" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/conn/conn-crud" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/conn/dashboard" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/conn/email-control" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/conn/entity" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/conn/entity-form" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/conn/form-crud" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/conn/helpers" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/conn/link-control" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/conn/session-control" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/conn/table" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/google/recaptcha" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/guzzlehttp/psr7" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/mailgun/mailgun-php" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/php-http/client-common" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/php-http/curl-client" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/php-http/discovery" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/php-http/httplug" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/php-http/message" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/php-http/message-factory" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/php-http/multipart-stream-builder" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/php-http/promise" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/psr/http-message" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/smarty/smarty" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/options-resolver" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/webmozart/assert" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

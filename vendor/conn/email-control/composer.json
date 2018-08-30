@@ -1,0 +1,27 @@
+{
+  "name": "conn/email-control",
+  "description": "Controle de Email, Envio de Email, Templates de Email",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Edinei J. Bauer",
+      "email": "edineibauer@gmail.com"
+    }
+  ],
+  "require": {
+    "php": "^7.0",
+    "conn/helpers": "^1",
+    "mailgun/mailgun-php": "^2.3",
+    "guzzlehttp/psr7": "^1.4",
+    "php-http/curl-client": "^1.7",
+    "smarty/smarty": "~3"
+  },
+  "autoload": {
+    "psr-0": {
+      "EmailControl": "src/"
+    }
+  }
+}
+
+

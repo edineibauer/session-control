@@ -1,0 +1,1159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="88670b9d-6c29-4f79-844f-9856f83d88dd" name="Default" comment="email and tel" />
+    <list id="8f6525b6-8ced-46c7-87e8-603b6b52d10c" name="Idea" comment="Idea">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    </list>
+    <list id="71de4a12-ca7a-492e-abe4-c6da7fb66e74" name="not" comment="not">
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+    </list>
+    <list id="665a0ff5-cc3a-4b3c-90d8-d93622413f68" name="testeBase" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <executablePath>composer</executablePath>
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="1769230284">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="3" />
+          <entry key="project.open.time.0" value="2" />
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.opened" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="php" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="PHP" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="php" value="3" />
+          <entry key="txt" value="23" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="PHP" value="3" />
+          <entry key="PLAIN_TEXT" value="23" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.js.language.service.starts" />
+      <usages-collector id="statistics.php.new.class" />
+      <usages-collector id="statistics.php.composer.actions" />
+      <usages-collector id="statistics.php.rename.constructor" />
+      <usages-collector id="statistics.php.new.test" />
+      <usages-collector id="statistics.php.composer.command.options" />
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/SessionControl/Login.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="623">
+              <caret line="189" selection-start-line="189" selection-end-line="189" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/view/inserir-nova-senha.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dash/-menu.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="17" selection-start-column="17" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="2" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="package_json" />
+        <option value="entity" />
+        <option value="JavaScript File" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>font-size</find>
+      <find>$log</find>
+      <find>logout</find>
+      <find>EMAIL</find>
+      <find>PRE . &quot;login&quot;</find>
+      <find>&quot;login&quot;</find>
+      <find>&quot;usuarios&quot;</find>
+      <find>setValu</find>
+      <find>var</find>
+      <find>$this-&gt;entity</find>
+      <find>link</find>
+      <find>setFo</find>
+      <find>setForm</find>
+      <find>var_</find>
+      <find>getForm(</find>
+      <find>new Meta</find>
+      <find>setcol</find>
+      <find>string</find>
+      <find>$this-&gt;relevant</find>
+      <find>$this-&gt;info</find>
+      <find>if($this-&gt;info)</find>
+      <find>$this-&gt;defaultMeta</find>
+      <find>input_type</find>
+      <find>setform</find>
+      <find>file_get_con</find>
+      <find>login</find>
+      <find>Email\(\);</find>
+      <find>configFinish</find>
+      <find>passw</find>
+      <find>default</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>PRE . &quot;usuarios&quot;</replace>
+      <replace>&quot;usuarios&quot;</replace>
+    </replaceStrings>
+    <dirStrings>
+      <dir>C:\wamp64\www\session-control\entity</dir>
+      <dir>C:\wamp64\www\session-control\assets</dir>
+      <dir>C:\wamp64\www\session-control\src\SessionControl</dir>
+      <dir>C:\wamp64\www\session-control\ajax</dir>
+      <dir>C:\wamp64\www\session-control\src</dir>
+      <dir>C:\wamp64\www\session-control</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/vendor/conn/link-control/src/LinkControl/Sessao.php" />
+        <option value="$PROJECT_DIR$/vendor/conn/form-crud/assets/form.min.js" />
+        <option value="$PROJECT_DIR$/vendor/conn/form-crud/assets/form-child.min.js" />
+        <option value="$PROJECT_DIR$/ajax/configFinish.php" />
+        <option value="$PROJECT_DIR$/assets/esqueci-a-senha.min.js" />
+        <option value="$PROJECT_DIR$/entity/cache/info/login.json" />
+        <option value="$PROJECT_DIR$/entity/cache/info/login_attempt.json" />
+        <option value="$PROJECT_DIR$/assets/login.min.js" />
+        <option value="$PROJECT_DIR$/ajax/recoveryEmail.php" />
+        <option value="$PROJECT_DIR$/assets/inserir-nova-senha.js" />
+        <option value="$PROJECT_DIR$/assets/inserir-nova-senha.min.js" />
+        <option value="$PROJECT_DIR$/ajax/setNewPassword.php" />
+        <option value="$PROJECT_DIR$/assets/cadastro-usuario.js" />
+        <option value="$PROJECT_DIR$/assets/cadastro-usuario.min.js" />
+        <option value="$PROJECT_DIR$/entity/cache/login_attempt.json" />
+        <option value="$PROJECT_DIR$/entity/cache/login.json" />
+        <option value="$PROJECT_DIR$/param/login.json" />
+        <option value="$PROJECT_DIR$/vendor/conn/entity/src/Entity/Entity.php" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/vendor/conn/entity-form/entity/input_type.json" />
+        <option value="$PROJECT_DIR$/vendor/conn/entity-form/src/EntityForm/Meta.php" />
+        <option value="$PROJECT_DIR$/vendor/conn/entity-form/src/EntityForm/Dicionario.php" />
+        <option value="$PROJECT_DIR$/vendor/conn/entity/src/Entity/EntityCreate.php" />
+        <option value="$PROJECT_DIR$/vendor/conn/form-crud/src/FormCrud/Form.php" />
+        <option value="$PROJECT_DIR$/vendor/conn/session-control/config.php" />
+        <option value="$PROJECT_DIR$/vendor/conn/link-control/src/LinkControl/EntityCreateEntityDatabase.php" />
+        <option value="$PROJECT_DIR$/composer.json" />
+        <option value="$PROJECT_DIR$/ajax/view/logout.php" />
+        <option value="$PROJECT_DIR$/assets/login.min.css" />
+        <option value="$PROJECT_DIR$/assets/login.css" />
+        <option value="$PROJECT_DIR$/assets/inserir-nova-senha.css" />
+        <option value="$PROJECT_DIR$/assets/inserir-nova-senha.min.css" />
+        <option value="$PROJECT_DIR$/assets/esqueci-a-senha.css" />
+        <option value="$PROJECT_DIR$/assets/esqueci-a-senha.min.css" />
+        <option value="$PROJECT_DIR$/assets/cadastro-usuario.css" />
+        <option value="$PROJECT_DIR$/assets/cadastro-usuario.min.css" />
+        <option value="$PROJECT_DIR$/ajax/view/inserir-nova-senha.php" />
+        <option value="$PROJECT_DIR$/ajax/view/cadastro-usuario.php" />
+        <option value="$PROJECT_DIR$/ajax/view/esqueci-a-senha.php" />
+        <option value="$PROJECT_DIR$/assets/login.js" />
+        <option value="$PROJECT_DIR$/ajax/view/login.php" />
+        <option value="$PROJECT_DIR$/entity/cache/info/usuarios.json" />
+        <option value="$PROJECT_DIR$/entity/cache/usuarios.json" />
+        <option value="$PROJECT_DIR$/view/cadastro-usuario.php" />
+        <option value="$PROJECT_DIR$/view/esqueci-a-senha.php" />
+        <option value="$PROJECT_DIR$/view/login.php" />
+        <option value="$PROJECT_DIR$/view/logout.php" />
+        <option value="$PROJECT_DIR$/dash/0/-menu.json" />
+        <option value="$PROJECT_DIR$/config.php" />
+        <option value="$PROJECT_DIR$/src/SessionControl/Login.php" />
+        <option value="$PROJECT_DIR$/view/inserir-nova-senha.php" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsFlowSettings">
+    <service-enabled>false</service-enabled>
+    <exe-path />
+    <annotation-enable>false</annotation-enable>
+    <other-services-enabled>false</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="PhpServers">
+    <servers>
+      <server host="localhost" id="d124f0ab-51c9-4821-9abf-5040c2f291cd" name="localhost" />
+    </servers>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/clue/stream-filter" />
+      <path value="$PROJECT_DIR$/vendor/conn/entity-form" />
+      <path value="$PROJECT_DIR$/vendor/conn/form-crud" />
+      <path value="$PROJECT_DIR$/vendor/conn/helpers" />
+      <path value="$PROJECT_DIR$/vendor/conn/session-control" />
+      <path value="$PROJECT_DIR$/vendor/conn/conn-crud" />
+      <path value="$PROJECT_DIR$/vendor/conn/email-control" />
+      <path value="$PROJECT_DIR$/vendor/conn/config" />
+      <path value="$PROJECT_DIR$/vendor/conn/dashboard" />
+      <path value="$PROJECT_DIR$/vendor/conn/entity" />
+      <path value="$PROJECT_DIR$/vendor/conn/link-control" />
+      <path value="$PROJECT_DIR$/vendor/conn/table" />
+      <path value="$PROJECT_DIR$/vendor/google/recaptcha" />
+      <path value="$PROJECT_DIR$/vendor/smarty/smarty" />
+      <path value="$PROJECT_DIR$/vendor/mailgun/mailgun-php" />
+      <path value="$PROJECT_DIR$/vendor/symfony/options-resolver" />
+      <path value="$PROJECT_DIR$/vendor/php-http/client-common" />
+      <path value="$PROJECT_DIR$/vendor/php-http/discovery" />
+      <path value="$PROJECT_DIR$/vendor/php-http/httplug" />
+      <path value="$PROJECT_DIR$/vendor/php-http/curl-client" />
+      <path value="$PROJECT_DIR$/vendor/php-http/multipart-stream-builder" />
+      <path value="$PROJECT_DIR$/vendor/php-http/promise" />
+      <path value="$PROJECT_DIR$/vendor/php-http/message" />
+      <path value="$PROJECT_DIR$/vendor/php-http/message-factory" />
+      <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+    </include_path>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-10" />
+    <option name="y" value="-10" />
+    <option name="width" value="1935" />
+    <option name="height" value="1050" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="session-control" type="b2602c69:ProjectViewProjectNode" />
+              <item name="session-control" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="session-control" type="b2602c69:ProjectViewProjectNode" />
+              <item name="session-control" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="session-control" type="b2602c69:ProjectViewProjectNode" />
+              <item name="session-control" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="SessionControl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="session-control" type="b2602c69:ProjectViewProjectNode" />
+              <item name="session-control" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\session-control\dash" />
+      <recent name="C:\wamp64\www\session-control" />
+      <recent name="C:\wamp64\www\session-control\ajax" />
+      <recent name="C:\wamp64\www\session-control\config" />
+      <recent name="C:\wamp64\www\session-control\assets" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\session-control\ajax" />
+      <recent name="C:\wamp64\www\session-control\view" />
+      <recent name="C:\wamp64\www\session-control\param" />
+      <recent name="C:\wamp64\www\session-control\dash" />
+      <recent name="C:\wamp64\www\session-control\entity" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="88670b9d-6c29-4f79-844f-9856f83d88dd" name="Default" comment="" />
+      <changelist id="8f6525b6-8ced-46c7-87e8-603b6b52d10c" name="Idea" comment="" />
+      <changelist id="665a0ff5-cc3a-4b3c-90d8-d93622413f68" name="testeBase" comment="" />
+      <changelist id="71de4a12-ca7a-492e-abe4-c6da7fb66e74" name="not" comment="" />
+      <created>1501719460405</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1501719460405</updated>
+      <workItem from="1501719462274" duration="993000" />
+      <workItem from="1501763879006" duration="534000" />
+      <workItem from="1501764533774" duration="149000" />
+      <workItem from="1501787532220" duration="37000" />
+      <workItem from="1501803956049" duration="3992000" />
+      <workItem from="1501849410194" duration="46000" />
+      <workItem from="1501894601787" duration="1239000" />
+      <workItem from="1501933404399" duration="2006000" />
+      <workItem from="1501942254819" duration="2524000" />
+      <workItem from="1502066538604" duration="3403000" />
+      <workItem from="1502108578300" duration="1342000" />
+      <workItem from="1502128411705" duration="3566000" />
+      <workItem from="1502222287213" duration="2734000" />
+      <workItem from="1502232138138" duration="15438000" />
+      <workItem from="1502281556712" duration="790000" />
+      <workItem from="1502308361752" duration="39000" />
+      <workItem from="1502308631493" duration="2427000" />
+      <workItem from="1502318912712" duration="8558000" />
+      <workItem from="1502364060662" duration="4112000" />
+      <workItem from="1502573252917" duration="3742000" />
+      <workItem from="1502711469594" duration="598000" />
+      <workItem from="1502837868712" duration="7134000" />
+      <workItem from="1502846901986" duration="1353000" />
+      <workItem from="1502888868548" duration="32000" />
+      <workItem from="1502891250130" duration="529000" />
+      <workItem from="1502908972642" duration="15294000" />
+      <workItem from="1502930060062" duration="5004000" />
+      <workItem from="1502999091825" duration="1908000" />
+      <workItem from="1503020168095" duration="3737000" />
+      <workItem from="1503099154571" duration="1724000" />
+      <workItem from="1503147405792" duration="7224000" />
+      <workItem from="1503168240113" duration="1760000" />
+      <workItem from="1503184620650" duration="29000" />
+      <workItem from="1503437615358" duration="332000" />
+      <workItem from="1503452574555" duration="5000" />
+      <workItem from="1503452601674" duration="11000" />
+      <workItem from="1503455004465" duration="637000" />
+      <workItem from="1504360331866" duration="1346000" />
+      <workItem from="1504967394785" duration="838000" />
+      <workItem from="1504969803641" duration="127000" />
+      <workItem from="1504972395296" duration="45000" />
+      <workItem from="1504977363609" duration="153000" />
+      <workItem from="1504977961894" duration="60000" />
+      <workItem from="1504978630021" duration="5812000" />
+      <workItem from="1504985074142" duration="1627000" />
+      <workItem from="1504988627493" duration="3118000" />
+      <workItem from="1505019478147" duration="294000" />
+      <workItem from="1505320146372" duration="414000" />
+      <workItem from="1505321199784" duration="3000" />
+      <workItem from="1505322121763" duration="42000" />
+      <workItem from="1505322220571" duration="150000" />
+      <workItem from="1505349553371" duration="176000" />
+      <workItem from="1505391488403" duration="608000" />
+      <workItem from="1505679100716" duration="73000" />
+      <workItem from="1505877865109" duration="1292000" />
+      <workItem from="1505880546843" duration="28000" />
+      <workItem from="1505917815262" duration="818000" />
+      <workItem from="1507152565582" duration="96000" />
+      <workItem from="1507155930409" duration="1376000" />
+      <workItem from="1507299868523" duration="179000" />
+      <workItem from="1514382133959" duration="30000" />
+      <workItem from="1514577894821" duration="89000" />
+      <workItem from="1515102545569" duration="12000" />
+      <workItem from="1515537939130" duration="1333000" />
+      <workItem from="1516223683475" duration="11000" />
+      <workItem from="1517317506677" duration="28000" />
+      <workItem from="1518192321066" duration="34771000" />
+      <workItem from="1518365778059" duration="641000" />
+      <workItem from="1518375498075" duration="1385000" />
+      <workItem from="1518382674346" duration="51000" />
+      <workItem from="1518385119747" duration="143000" />
+      <workItem from="1518385974945" duration="12000" />
+      <workItem from="1518386342746" duration="68000" />
+      <workItem from="1518388226325" duration="141000" />
+      <workItem from="1518388659918" duration="1685000" />
+      <workItem from="1518434688831" duration="3212000" />
+      <workItem from="1518455801724" duration="6082000" />
+      <workItem from="1518471670962" duration="611000" />
+      <workItem from="1518530066991" duration="943000" />
+      <workItem from="1518531735236" duration="17000" />
+      <workItem from="1518533599840" duration="181000" />
+      <workItem from="1519147260958" duration="611000" />
+      <workItem from="1520639308600" duration="49000" />
+      <workItem from="1521055501620" duration="1336000" />
+      <workItem from="1521056915213" duration="652000" />
+      <workItem from="1521130992369" duration="781000" />
+      <workItem from="1521138068632" duration="3360000" />
+      <workItem from="1522261074955" duration="1868000" />
+      <workItem from="1522265130558" duration="610000" />
+      <workItem from="1522431074292" duration="600000" />
+      <workItem from="1522702768830" duration="14000" />
+      <workItem from="1523471370510" duration="47000" />
+      <workItem from="1524742704282" duration="10322000" />
+      <workItem from="1524754575418" duration="5904000" />
+      <workItem from="1524765607796" duration="202000" />
+      <workItem from="1524780106459" duration="39000" />
+      <workItem from="1524780672754" duration="78000" />
+      <workItem from="1524839616154" duration="22000" />
+      <workItem from="1525216524385" duration="5000" />
+      <workItem from="1525219457362" duration="7000" />
+      <workItem from="1525456784315" duration="1844000" />
+      <workItem from="1525461990183" duration="502000" />
+      <workItem from="1525870676033" duration="1684000" />
+      <workItem from="1525995105375" duration="631000" />
+      <workItem from="1526084593348" duration="8000" />
+      <workItem from="1526936499898" duration="639000" />
+      <workItem from="1526952187155" duration="153000" />
+      <workItem from="1526953265374" duration="661000" />
+      <workItem from="1527016707286" duration="169000" />
+      <workItem from="1527098908278" duration="654000" />
+      <workItem from="1527103274191" duration="1372000" />
+      <workItem from="1527564195342" duration="289000" />
+      <workItem from="1527566634085" duration="651000" />
+      <workItem from="1527785921969" duration="2363000" />
+      <workItem from="1527797639019" duration="696000" />
+      <workItem from="1528199612863" duration="1975000" />
+      <workItem from="1528226031811" duration="645000" />
+      <workItem from="1529504905954" duration="615000" />
+      <workItem from="1529696847908" duration="30000" />
+      <workItem from="1530127188040" duration="31000" />
+      <workItem from="1530194763743" duration="157000" />
+      <workItem from="1530196133046" duration="222000" />
+      <workItem from="1530196543695" duration="652000" />
+      <workItem from="1530642202719" duration="164000" />
+      <workItem from="1530669141471" duration="31000" />
+      <workItem from="1530969564985" duration="10000" />
+      <workItem from="1531408547289" duration="51000" />
+      <workItem from="1532404420765" duration="176000" />
+      <workItem from="1532524634749" duration="99000" />
+      <workItem from="1532553887407" duration="51000" />
+      <workItem from="1532613328233" duration="1133000" />
+      <workItem from="1532627347504" duration="140000" />
+      <workItem from="1533405966408" duration="705000" />
+      <workItem from="1534949715882" duration="729000" />
+      <workItem from="1535570550364" duration="174000" />
+    </task>
+    <task id="LOCAL-00077" summary="login com nome também">
+      <created>1518462885330</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1518462885330</updated>
+    </task>
+    <task id="LOCAL-00078" summary="minifier">
+      <created>1518531199084</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1518531199085</updated>
+    </task>
+    <task id="LOCAL-00079" summary="conf">
+      <created>1518533698098</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1518533698098</updated>
+    </task>
+    <task id="LOCAL-00080" summary="updates config first up and keypress login">
+      <created>1521056789408</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1521056789408</updated>
+    </task>
+    <task id="LOCAL-00081" summary="recovery">
+      <created>1521138299045</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1521138299045</updated>
+    </task>
+    <task id="LOCAL-00082" summary="inserir senha nova">
+      <created>1521142476750</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1521142476750</updated>
+    </task>
+    <task id="LOCAL-00083" summary="ups">
+      <created>1521143603795</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1521143603795</updated>
+    </task>
+    <task id="LOCAL-00084" summary="cadastro up">
+      <created>1522263165339</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1522263165340</updated>
+    </task>
+    <task id="LOCAL-00085" summary="response to cadastro">
+      <created>1522264175287</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1522264175287</updated>
+    </task>
+    <task id="LOCAL-00086" summary="up entity">
+      <created>1523471396535</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1523471396536</updated>
+    </task>
+    <task id="LOCAL-00087" summary="change login to usuarios">
+      <created>1524751181074</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1524751181074</updated>
+    </task>
+    <task id="LOCAL-00088" summary="change login to usuarios">
+      <created>1524756537285</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1524756537285</updated>
+    </task>
+    <task id="LOCAL-00089" summary="min">
+      <created>1524757924593</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1524757924593</updated>
+    </task>
+    <task id="LOCAL-00090" summary="change login to usuarios">
+      <created>1524760545913</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1524760545913</updated>
+    </task>
+    <task id="LOCAL-00091" summary="change login to usuarios">
+      <created>1524765797436</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1524765797437</updated>
+    </task>
+    <task id="LOCAL-00092" summary="namespace import">
+      <created>1524780700698</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1524780700698</updated>
+    </task>
+    <task id="LOCAL-00093" summary="session config first time">
+      <created>1525458820452</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1525458820452</updated>
+    </task>
+    <task id="LOCAL-00094" summary="up mailgun to sparkpost email">
+      <created>1525870981307</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1525870981307</updated>
+    </task>
+    <task id="LOCAL-00095" summary="config up version control">
+      <created>1525995129449</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1525995129450</updated>
+    </task>
+    <task id="LOCAL-00096" summary="new folder view location">
+      <created>1526936520003</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1526936520004</updated>
+    </task>
+    <task id="LOCAL-00097" summary="session new pattern">
+      <created>1526952328716</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1526952328716</updated>
+    </task>
+    <task id="LOCAL-00098" summary="logout">
+      <created>1526953316190</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1526953316190</updated>
+    </task>
+    <task id="LOCAL-00099" summary="remove style body color">
+      <created>1527098960596</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1527098960596</updated>
+    </task>
+    <task id="LOCAL-00100" summary="up">
+      <created>1527103306716</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1527103306716</updated>
+    </task>
+    <task id="LOCAL-00101" summary="up">
+      <created>1527104817764</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1527104817764</updated>
+    </task>
+    <task id="LOCAL-00102" summary="config">
+      <created>1527564399397</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1527564399397</updated>
+    </task>
+    <task id="LOCAL-00103" summary="up">
+      <created>1527567106681</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1527567106681</updated>
+    </task>
+    <task id="LOCAL-00104" summary="up">
+      <created>1527786227304</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1527786227304</updated>
+    </task>
+    <task id="LOCAL-00105" summary="up">
+      <created>1527788022429</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1527788022429</updated>
+    </task>
+    <task id="LOCAL-00106" summary="up">
+      <created>1527788476667</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1527788476667</updated>
+    </task>
+    <task id="LOCAL-00107" summary="up">
+      <created>1527788691207</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1527788691207</updated>
+    </task>
+    <task id="LOCAL-00108" summary="up">
+      <created>1527797734007</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1527797734008</updated>
+    </task>
+    <task id="LOCAL-00109" summary="delimita senha para caracteres entre 4 e 20">
+      <created>1528200624633</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1528200624633</updated>
+    </task>
+    <task id="LOCAL-00110" summary="password default empty, so the user don't get login for default">
+      <created>1528200722140</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
+      <option name="project" value="LOCAL" />
+      <updated>1528200722140</updated>
+    </task>
+    <task id="LOCAL-00111" summary="login fix">
+      <created>1528226075802</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1528226075802</updated>
+    </task>
+    <task id="LOCAL-00112" summary="password field">
+      <created>1529504920430</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1529504920430</updated>
+    </task>
+    <task id="LOCAL-00113" summary="unset all session">
+      <created>1529696868738</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1529696868738</updated>
+    </task>
+    <task id="LOCAL-00114" summary="up password">
+      <created>1530194793236</created>
+      <option name="number" value="00114" />
+      <option name="presentableId" value="LOCAL-00114" />
+      <option name="project" value="LOCAL" />
+      <updated>1530194793236</updated>
+    </task>
+    <task id="LOCAL-00115" summary="up usuarios">
+      <created>1530196247073</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1530196247073</updated>
+    </task>
+    <task id="LOCAL-00116" summary="up usuarios">
+      <created>1530196595204</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1530196595204</updated>
+    </task>
+    <task id="LOCAL-00117" summary="up usuarios">
+      <created>1531408560775</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1531408560775</updated>
+    </task>
+    <task id="LOCAL-00118" summary="view update">
+      <created>1532524706487</created>
+      <option name="number" value="00118" />
+      <option name="presentableId" value="LOCAL-00118" />
+      <option name="project" value="LOCAL" />
+      <updated>1532524706487</updated>
+    </task>
+    <task id="LOCAL-00119" summary="view update">
+      <created>1532553904260</created>
+      <option name="number" value="00119" />
+      <option name="presentableId" value="LOCAL-00119" />
+      <option name="project" value="LOCAL" />
+      <updated>1532553904260</updated>
+    </task>
+    <task id="LOCAL-00120" summary="update">
+      <created>1532616766771</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
+      <option name="project" value="LOCAL" />
+      <updated>1532616766771</updated>
+    </task>
+    <task id="LOCAL-00121" summary="update">
+      <created>1532627363431</created>
+      <option name="number" value="00121" />
+      <option name="presentableId" value="LOCAL-00121" />
+      <option name="project" value="LOCAL" />
+      <updated>1532627363431</updated>
+    </task>
+    <task id="LOCAL-00122" summary="update">
+      <created>1533406071238</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
+      <option name="project" value="LOCAL" />
+      <updated>1533406071238</updated>
+    </task>
+    <task id="LOCAL-00123" summary="just email">
+      <created>1534949738192</created>
+      <option name="number" value="00123" />
+      <option name="presentableId" value="LOCAL-00123" />
+      <option name="project" value="LOCAL" />
+      <updated>1534949738192</updated>
+    </task>
+    <task id="LOCAL-00124" summary="email and tel">
+      <created>1534949844547</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1534949844547</updated>
+    </task>
+    <task id="LOCAL-00125" summary="email and tel">
+      <created>1535570679514</created>
+      <option name="number" value="00125" />
+      <option name="presentableId" value="LOCAL-00125" />
+      <option name="project" value="LOCAL" />
+      <updated>1535570679515</updated>
+    </task>
+    <option name="localTasksCounter" value="126" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="221716000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29194632" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32763532" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32905984" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49785176" weight="0.3997722" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50322235" side_tool="true" weight="0.32905984" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49677765" weight="0.17378917" />
+      <window_info anchor="bottom" id="Version Control" order="11" weight="0.32624114" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="up entity" />
+    <MESSAGE value="min" />
+    <MESSAGE value="change login to usuarios" />
+    <MESSAGE value="namespace import" />
+    <MESSAGE value="session config first time" />
+    <MESSAGE value="up mailgun to sparkpost email" />
+    <MESSAGE value="config up version control" />
+    <MESSAGE value="new folder view location" />
+    <MESSAGE value="session new pattern" />
+    <MESSAGE value="logout" />
+    <MESSAGE value="remove style body color" />
+    <MESSAGE value="config" />
+    <MESSAGE value="up" />
+    <MESSAGE value="delimita senha para caracteres entre 4 e 20" />
+    <MESSAGE value="password default empty, so the user don't get login for default" />
+    <MESSAGE value="login fix" />
+    <MESSAGE value="password field" />
+    <MESSAGE value="unset all session" />
+    <MESSAGE value="up password" />
+    <MESSAGE value="not" />
+    <MESSAGE value="up usuarios" />
+    <MESSAGE value="view update" />
+    <MESSAGE value="update" />
+    <MESSAGE value="just email" />
+    <MESSAGE value="email and tel" />
+    <option name="LAST_COMMIT_MESSAGE" value="email and tel" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/ajax/configFinish.php" />
+    <entry file="file://$PROJECT_DIR$/vendor/conn/link-control/src/LinkControl/Link.php" />
+    <entry file="file://$PROJECT_DIR$/assets/esqueci-a-senha.min.js" />
+    <entry file="file://$PROJECT_DIR$/entity/cache/info/login_attempt.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="345" selection-start-column="345" selection-end-column="345" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/login.min.js" />
+    <entry file="file://$PROJECT_DIR$/assets/inserir-nova-senha.min.js" />
+    <entry file="file://$PROJECT_DIR$/assets/inserir-nova-senha.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ajax/setNewPassword.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/cadastro-usuario.min.js" />
+    <entry file="file://$PROJECT_DIR$/entity/cache/login_attempt.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/param/login.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_config/config.php" />
+    <entry file="file://$PROJECT_DIR$/index.php" />
+    <entry file="file://$PROJECT_DIR$/vendor/conn/entity/src/Entity/Entity.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="33" column="27" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/conn/entity-form/entity/input_type.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="9" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/conn/entity-form/src/EntityForm/Dicionario.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="10" column="1" lean-forward="true" selection-end-line="381" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/conn/entity-form/src/EntityForm/Meta.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="107">
+          <caret line="129" column="9" lean-forward="true" selection-end-line="565" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/conn/entity-form/src/EntityForm/Validate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="227" lean-forward="true" selection-start-line="227" selection-end-line="227" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/conn/entity-form/src/EntityForm/Metadados.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="27" lean-forward="true" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/conn/entity/src/Entity/EntityCreate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="22" column="46" selection-start-line="22" selection-start-column="46" selection-end-line="22" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/conn/link-control/src/LinkControl/EntityDatabase.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="8" column="15" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/conn/form-crud/src/FormCrud/Form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1938" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/conn/session-control/config.php" />
+    <entry file="file://$PROJECT_DIR$/vendor/conn/link-control/src/LinkControl/EntityImport.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="34" column="21" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/conn/link-control/src/LinkControl/EntityCreateEntityDatabase.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/conn/dashboard/assets/dashboard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="40" column="26" selection-start-line="40" selection-start-column="22" selection-end-line="40" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/conn/table/src/Table/TableData.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1037">
+          <caret line="67" column="38" selection-start-line="67" selection-start-column="38" selection-end-line="67" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/conn/session-control/ajax/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="9" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ajax/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/cadastro-usuario.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/esqueci-a-senha.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="22" selection-end-line="16" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="48" selection-start-line="29" selection-start-column="48" selection-end-line="29" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/entity/cache/info/usuarios.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="118" lean-forward="true" selection-start-column="118" selection-end-column="118" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/esqueci-a-senha.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1173">
+          <caret line="69" column="9" selection-start-line="69" selection-start-column="9" selection-end-line="69" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/logout.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="5" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/cadastro-usuario.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ajax/recoveryEmail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="40" selection-start-line="13" selection-start-column="40" selection-end-line="13" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/entity/cache/usuarios.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="620">
+          <caret line="213" column="16" selection-start-line="213" selection-start-column="16" selection-end-line="213" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SessionControl/Login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="623">
+          <caret line="189" selection-start-line="189" selection-end-line="189" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dash/-menu.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="17" selection-start-column="17" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="2" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/inserir-nova-senha.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

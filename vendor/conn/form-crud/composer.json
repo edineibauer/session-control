@@ -1,0 +1,21 @@
+{
+  "name": "conn/form-crud",
+  "description": "criar de forma automática formulários para manipulação de informações de uma tabela",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Edinei J. Bauer",
+      "email": "edineibauer@gmail.com"
+    }
+  ],
+  "require": {
+    "php": "^7.0",
+    "conn/entity": "^1.0"
+  },
+  "autoload": {
+    "psr-0": {
+      "FormCrud": "src/"
+    }
+  }
+}

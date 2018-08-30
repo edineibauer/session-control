@@ -1,0 +1,129 @@
+/* FONT */
+.font-tiny {
+    font-size: 10px !important
+}
+
+.font-small {
+    font-size: 12px !important
+}
+
+.font-normal {
+    font-size: 15px !important
+}
+
+.font-h5 {
+    font-size: 18px !important
+}
+
+.font-h3 {
+    font-size: 24px !important
+}
+
+.font-h1 {
+    font-size: 36px !important
+}
+
+.font-big {
+    font-size: 48px !important
+}
+
+.font-large {
+    font-size: 64px !important
+}
+
+/* BUTTONS */
+.btn-large {
+    padding: 15px 25px;
+    font-size: 1.5em;
+}
+
+.btn-small {
+    padding: 5px 10px;
+    font-size: 1em;
+}
+
+.click {
+    box-shadow: 3px 4px 5px 0 #999;
+}
+
+.click:active {
+    box-shadow: 1px 1px 1px 0 #666;
+    transform: translateY(2px);
+}
+
+/* switch */
+.switch {
+    float: left;
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin-bottom: 15px;
+}
+
+.switch input[type=checkbox] {
+    display: none;
+}
+
+.switch .slider {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: #999;
+    height: 20px;
+    width: 45px;
+    border-radius: 34px;
+}
+
+.switch .slider:after {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: -1px;
+    bottom: -3px;
+    background-color: white;
+    -webkit-transition: 0.25s;
+    transition: 0.25s;
+    border-radius: 50%;
+    cursor: pointer;
+    -webkit-box-shadow: 2px 2px 9px -3px rgba(61,61,61,1);
+    -moz-box-shadow: 2px 2px 9px -3px rgba(61,61,61,1);
+    box-shadow: 2px 2px 9px -3px rgba(61,61,61,1);
+}
+
+.switch input:checked + .slider {
+    background: #62BAB2;
+}
+
+.switch input:checked + .slider:after {
+    -webkit-transform: translateX(21px);
+    -ms-transform: translateX(21px);
+    transform: translateX(21px);
+    background-color: #009688;
+}
+
+.switch input:checked + .slider:before {
+    left: 31px;
+}
+
+.switch .slider:before {
+    content: '';
+    position: absolute;
+    bottom: 7px;
+    left: 12px;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.8);
+    opacity: 1;
+    border-radius: 100%;
+    transform: scale(4, 4);
+    transition: 0.25s;
+    -webkit-transition: 0.25s;
+}
+
+.switch:active .slider:before{
+    transition: 0s;
+    -webkit-transition: 0s;
+    transform: scale(20, 20);
+    opacity: 0;
+}

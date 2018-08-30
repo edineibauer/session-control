@@ -1,0 +1,19 @@
+{
+  "title": "Session",
+  "js": [
+    "jquery",
+    "boot",
+    "panel"
+  ],
+  "css": [
+    "w3",
+    "theme",
+    "panel"
+  ],
+  "font": [
+    "roboto"
+  ],
+  "icon": [
+    "material"
+  ]
+}

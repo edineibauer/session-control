@@ -1,0 +1,22 @@
+{
+  "title": "FORM",
+  "type": "page",
+  "js": [
+    "jquery",
+    "resizeSensor",
+    "panel"
+  ],
+  "css": [
+    "font",
+    "helper",
+    "panel",
+    "color",
+    "w3"
+  ],
+  "font": [
+    "lato"
+  ],
+  "icon": [
+    "material"
+  ]
+}

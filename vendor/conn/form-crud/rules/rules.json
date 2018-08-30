@@ -1,0 +1,10 @@
+[
+  ["login",
+    [
+      ["nivel <", "nivel"],
+      ["setor =", "setor"]
+    ]
+  ],
+  ["login", "setor <", "setor"],
+  ["login", "2 <", "setor"]
+]

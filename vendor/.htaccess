@@ -1,0 +1,16 @@
+<Files "*.json">
+            Order Deny,Allow
+            Deny from all
+        </Files>
+        <Files "*.php">
+            Order Deny,Allow
+            Deny from all
+        </Files>
+        <Files "*.html">
+            Order Deny,Allow
+            Deny from all
+        </Files>
+        <Files "*.tpl">
+            Order Deny,Allow
+            Deny from all
+        </Files>

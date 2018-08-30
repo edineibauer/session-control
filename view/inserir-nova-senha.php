@@ -5,8 +5,8 @@ if (empty($code) || strlen($code) < 10) {
     $data['response'] = 3;
     $data['data'] = HOME . "esqueci-a-senha";
 } else {
-
     ob_start();
+    $teste='te';
     ?>
     <div class='row font-large' style="max-width: 450px; margin: auto">
         <div class="clear"><br><br><br></div>
