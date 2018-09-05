@@ -5,13 +5,18 @@ use Helpers\Check;
 $senha = strip_tags(trim(filter_input(INPUT_POST, 'senha', FILTER_DEFAULT)));
 $restoreCode = filter_input(INPUT_POST, 'code', FILTER_DEFAULT);
 
+$d = new \EntityForm\Dicionario("usuarios");
+$passColumn = $d->search($d->getInfo()['password'])->getColumn();
+
 $banco = new TableCrud("usuarios");
 $banco->load("token_recovery", $restoreCode);
 if ($banco->exist()) {
-    $banco->token_recovery = "";
-    $banco->token = "";
-    $banco->token_expira = "";
-    $banco->password = Check::password($senha);
+    $banco->setDados([
+        "token_recovery" => "",
+        "token" => "",
+        "token_expira" => "",
+        $passColumn => Check::password($senha)
+    ]);
     $banco->save();
 
     $data['data'] = "1";
