@@ -1,6 +1,7 @@
 <?php
 
 $code = explode('get/inserir-nova-senha/', $_SERVER['REQUEST_URI'])[1];
+
 if (empty($code) || strlen($code) < 10) {
     $data['response'] = 3;
     $data['data'] = HOME . "esqueci-a-senha";
@@ -23,7 +24,7 @@ if (empty($code) || strlen($code) < 10) {
             <input type="hidden" id="code" value="<?= $code ?>"/>
         </div>
         <div class="card" style="margin-top: 3px;">
-            <button class="col btn-large color-blue opacity hover-shadow" style="float:initial!important;"
+            <button class="col btn-large theme-d1 opacity hover-shadow hover-opacity-off" style="float:initial!important;"
                     onclick="newPassword();">
                 Confirmar Nova Senha
             </button>
