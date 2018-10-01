@@ -1,1 +1,0 @@
-<input type='hidden' {($value && $value > 0) ? "value='{$value}' " : "" } data-model="{$ngmodel}" id="{$ngmodel}" data-format="hidden" />
