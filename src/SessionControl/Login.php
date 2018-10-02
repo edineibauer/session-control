@@ -123,7 +123,7 @@ class Login
             $password = $d->search($d->getInfo()['password'])->getColumn();
 
             $read = new Read();
-            $read->exeRead(PRE . "usuarios", "WHERE {$emailName} = :email && {$password} = :pass", "email={$this->email}&pass={$this->senha}");
+            $read->exeRead(PRE . "usuarios", "WHERE ({$emailName} = :email || nome_usuario = :email) && {$password} = :pass", "email={$this->email}&pass={$this->senha}");
             if ($read->getResult() && $read->getResult()[0]['status'] === '1' && !$this->getResult()) {
                 $_SESSION['userlogin'] = $read->getResult()[0];
 
