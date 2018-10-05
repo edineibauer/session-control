@@ -85,9 +85,16 @@ class Login
     {
         setcookie("token", 0, time() - 1, "/");
         if (isset($_SESSION['userlogin'])) {
-            if(isset($_SESSION['userlogin']['token']) && !empty($_SESSION['userlogin']['token'])) {
+            if(!empty($_SESSION['userlogin']['token'])) {
                 $token = new TableCrud(PRE . "usuarios");
                 $token->load("token", $_SESSION['userlogin']['token']);
+                if ($token->exist()) {
+                    $token->setDados(["token" => null, "token_expira" => null]);
+                    $token->save();
+                }
+            } elseif(!empty($_SESSION['userlogin']['email'])) {
+                $token = new TableCrud(PRE . "usuarios");
+                $token->load("email", $_SESSION['userlogin']['email']);
                 if ($token->exist()) {
                     $token->setDados(["token" => null, "token_expira" => null]);
                     $token->save();
@@ -101,7 +108,7 @@ class Login
     private function start()
     {
         if ($this->email && $this->senha && !$this->attemptExceded()) {
-            if (LOGGED)
+            if (!empty($_SESSION['userlogin']))
                 $this->setResult('Você já esta logado.');
             elseif ($this->isHuman())
                 $this->checkUserInfo();
@@ -126,14 +133,14 @@ class Login
             $read->exeRead(PRE . "usuarios", "WHERE ({$emailName} = :email || nome_usuario = :email) && {$password} = :pass", "email={$this->email}&pass={$this->senha}");
             if ($read->getResult() && $read->getResult()[0]['status'] === '1' && !$this->getResult()) {
                 $_SESSION['userlogin'] = $read->getResult()[0];
+                $_SESSION['userlogin']['imagem'] = json_decode($_SESSION['userlogin']['imagem'], true)[0]['url'];
 
                 if (!isset($_SESSION['userlogin']['email']))
                     $_SESSION['userlogin']['email'] = $_SESSION['userlogin'][$emailName];
 
-                $_SESSION['userlogin']['imagem'] = json_decode($_SESSION['userlogin']['imagem'], true)[0]['url'];
-
                 $up = new Update();
-                $up->exeUpdate(PRE . "usuarios", ['token' => $this->getToken(), "token_expira" => date("Y-m-d H:i:s"), "token_recovery" => null], "WHERE (email = :email || nome_usuario = :email) && password = :pass", "email={$this->email}&pass={$this->senha}");
+                $up->exeUpdate(PRE . "usuarios", ['token' => $this->getToken(), "token_expira" => date("Y-m-d H:i:s"), "token_recovery" => null], "WHERE id = :id", "id={$read->getResult()[0]['id']}");
+
                 $this->setCookie($_SESSION['userlogin']['token']);
             } else {
                 if ($read->getResult())
