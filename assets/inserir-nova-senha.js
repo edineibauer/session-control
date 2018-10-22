@@ -11,12 +11,12 @@ function newPassword() {
                         window.location.href = HOME + "login";
                     },1500);
                 } else {
-                    toast("Token Inválido! Tente recuperar senha novamente.", 6000, "warning");
+                    toast("Token Inválido! Tente recuperar senha novamente.", 6000, "toast-warning");
                 }
                 novaSenha = true;
             });
         } else {
-            toast("senhas não correspondem", "warning");
+            toast("senhas não correspondem", 3000, "toast-warning");
             novaSenha = true;
         }
     }

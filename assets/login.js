@@ -13,9 +13,9 @@ function login() {
             recaptcha: recaptcha
         }, function (g) {
             if(g) {
-                toast(g, "warning", 3000);
+                toast(g, 3000, "toast-warning");
             } else {
-                toast("Logando...", 2000);
+                toast("Logando...", 2000, "toast-success");
 
                 setTimeout(function () {
                     window.location.href = HOME + 'dashboard';

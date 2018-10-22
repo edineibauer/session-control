@@ -3,6 +3,6 @@ function goToDashboard(dados) {
         if(!g)
             location.href = HOME + "dashboard";
         else
-            toast(g, "warning", 4000);
+            toast(g, 4000, "toast-warning");
     });
 }
