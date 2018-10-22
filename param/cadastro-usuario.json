@@ -1,4 +1,5 @@
 {
   "title": "Cadastro de Novo Usuário",
-  "type": "page"
+  "type": "page",
+  "css": ["w3"]
 }

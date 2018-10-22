@@ -1,5 +1,6 @@
 {
   "title": "Login",
   "subtitle": "faça login para continuar",
-  "type": "page"
+  "type": "page",
+  "css": ["w3"]
 }
