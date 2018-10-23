@@ -128,6 +128,7 @@ class Login
             $d = new Dicionario("usuarios");
             $emailName = $d->search($d->getInfo()['email'])->getColumn();
             $password = $d->search($d->getInfo()['password'])->getColumn();
+            $nome = $d->search($d->getInfo()['title'])->getColumn();
 
             $read = new Read();
             $read->exeRead(PRE . "usuarios", "WHERE ({$emailName} = :email || nome_usuario = :email) && {$password} = :pass", "email={$this->email}&pass={$this->senha}");
@@ -137,6 +138,10 @@ class Login
 
                 if (!isset($_SESSION['userlogin']['email']))
                     $_SESSION['userlogin']['email'] = $_SESSION['userlogin'][$emailName];
+
+                if(!isset($_SESSION['userlogin']['nome']))
+                    $_SESSION['userlogin']['nome'] = $_SESSION['userlogin'][$nome];
+
 
                 $up = new Update();
                 $up->exeUpdate(PRE . "usuarios", ['token' => $this->getToken(), "token_expira" => date("Y-m-d H:i:s"), "token_recovery" => null], "WHERE id = :id", "id={$read->getResult()[0]['id']}");
