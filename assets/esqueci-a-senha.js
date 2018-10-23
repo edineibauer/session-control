@@ -7,9 +7,9 @@ function recoveryEmail() {
         if(email.length > 6 && email.test(/\w+@\w+.\w+/i)) {
             post('session-control', 'recoveryEmail', {email: email}, function (g) {
                 if (!g) {
-                    $("body").panel(themeNotify('Email não encontrado!', "warning", 4000));
+                    toast('Email não encontrado!', 4000, "toast-warning");
                 } else {
-                    $("body").panel(themeNotify('Link de Recuperação enviada ao email', 4000));
+                    toast('Link de Recuperação enviada ao email', 4000, "toast-success");
                     $("#recovery-email").val("");
                 }
 
