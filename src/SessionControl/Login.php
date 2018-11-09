@@ -142,7 +142,6 @@ class Login
                 if(!isset($_SESSION['userlogin']['nome']))
                     $_SESSION['userlogin']['nome'] = $_SESSION['userlogin'][$nome];
 
-
                 $up = new Update();
                 $up->exeUpdate(PRE . "usuarios", ['token' => $this->getToken(), "token_expira" => date("Y-m-d H:i:s"), "token_recovery" => null], "WHERE id = :id", "id={$read->getResult()[0]['id']}");
 
