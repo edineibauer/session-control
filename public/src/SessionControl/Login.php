@@ -5,7 +5,7 @@ namespace SessionControl;
 use \ConnCrud\Read;
 use \ConnCrud\TableCrud;
 use ConnCrud\Update;
-use EntityForm\Dicionario;
+use Entity\Dicionario;
 use Helpers\Check;
 use Helpers\Helper;
 use \ReCaptcha\ReCaptcha;

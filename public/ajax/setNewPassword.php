@@ -5,7 +5,7 @@ use Helpers\Check;
 $senha = strip_tags(trim(filter_input(INPUT_POST, 'senha', FILTER_DEFAULT)));
 $restoreCode = filter_input(INPUT_POST, 'code', FILTER_DEFAULT);
 
-$d = new \EntityForm\Dicionario("usuarios");
+$d = new \Entity\Dicionario("usuarios");
 $passColumn = $d->search($d->getInfo()['password'])->getColumn();
 
 $banco = new TableCrud("usuarios");
