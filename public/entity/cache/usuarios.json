@@ -126,7 +126,7 @@
     "update": "true",
     "relation": "",
     "allow": {
-      "regex": "\/^.{4,20}$\/",
+      "regex": "",
       "validate": ""
     },
     "form": {
