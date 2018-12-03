@@ -1,11 +1,18 @@
 var recoveryFree = true;
 
+function validateEmail(email) {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+}
+
 function recoveryEmail() {
     if (recoveryFree) {
         recoveryFree = false;
         let email = $("#recovery-email").val();
-        if(email.length > 6 && email.test(/\w+@\w+.\w+/i)) {
+        let reg = new RegExp("\w+@\w+.\w+", "i");
+        if(validateEmail(email)) {
             post('session-control', 'recoveryEmail', {email: email}, function (g) {
+                console.log(g);
                 if (!g) {
                     toast('Email não encontrado!', 4000, "toast-warning");
                 } else {
@@ -16,7 +23,8 @@ function recoveryEmail() {
                 recoveryFree = true;
             });
         } else {
-            toast("Informe um email válido")
+            toast("Informe um email válido");
+            recoveryFree = true;
         }
     }
 }

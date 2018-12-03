@@ -11,10 +11,14 @@ if ($email) {
         $user->setDados(['token' => null, 'token_recovery' => $code, "token_expira" => date('Y-m-d H:i:s')]);
         $user->save();
 
-        $send = new \EmailControl\EmailSparkPost();
-        $send->setAssunto("Recuperação de Senha " . SITENAME);
-        $send->setTemplate("password", $user->getDados());
-        $send->enviar($email);
+        //Prepara para enviar email
+        $envio = new \EmailControl\EmailEnvio();
+        $envio->setAssunto("Recuperação de Senha");
+        $envio->setDestinatarioEmail($email);
+        $envio->setBtnLink(HOME . "inserir-nova-senha/{$code}");
+        $envio->setBtnText("<b style='font-size:25px;color:white'>Redefinir Senha</b>");
+        $envio->setMensagem("Para redefinir sua senha, clique no link abaixo.");
+        $envio->enviar();
 
         $data['data'] = true;
     }
