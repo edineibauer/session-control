@@ -15,7 +15,7 @@ function login() {
             if(g) {
                 toast(g, 3000, "toast-warning");
             } else {
-                toast("Logando...", 2000, "toast-success");
+                toast("Acessando...", 2000, "toast-success");
 
                 setTimeout(function () {
                     window.location.href = HOME + 'dashboard';
